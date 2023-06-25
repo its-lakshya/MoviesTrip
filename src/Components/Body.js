@@ -1,6 +1,7 @@
 import React from "react";
 import PopularMovies from "./PopularMovies";
 import UpcomingMovies from "./UpcomingMovies";
+import TopRatedMovies from "./TopRatedMovies";
 
 const Body = () => {
   
@@ -13,9 +14,10 @@ const Body = () => {
 
 
   return (
-    <div className='bg-black bg-opacity-95'>
+    <div className='bg-black bg-opacity-95 '>
       <PopularMovies/>
       <UpcomingMovies/>
+      <TopRatedMovies/>
     </div>
   );
 };

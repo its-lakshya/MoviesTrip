@@ -15,3 +15,13 @@ code {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .pause {
+    animation-play-state: paused;
+  }
+  /* .scrollbar-medium::-webkit-scrollbar {
+    height: 5px;
+    background:gray
+  }  */
+}

@@ -1,10 +1,10 @@
 import React from "react";
 import { IMAGES_BASE_URL } from "../Constants";
 
-const UpcomingCard = ({ data }) => {
+const TopRatedCard = ({ data }) => {
   // console.log(data.id)
   return (
-    <div className="animate-horizontalAutoScrollRight-infinite">
+    <div className="animate-horizontalAutoScrollLeft-infinite">
       <div
         className="scroll-none cursor-pointer w-48 h-80 box-border flex flex-col justify-end  mx-4 snap-start  hover:scale-110 hover:shadow-red-700 hover:shadow-lg"
         style={{
@@ -20,4 +20,4 @@ const UpcomingCard = ({ data }) => {
   );
 };
 
-export default UpcomingCard;
+export default TopRatedCard;

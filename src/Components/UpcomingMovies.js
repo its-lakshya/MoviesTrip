@@ -3,10 +3,26 @@ import { options } from "../Constants";
 import UpcomingCard from "./UpcomingCard";
 
 const UpcomingMovies = () => {
-  const [UpcomingMovies, setUpcomingMovies] = useState(null);
+  const [upcomingMovies, setUpcomingMovies] = useState(null);
+
+  const [scrollPosition, setSrollPosition] = useState(0);
+
+  const handleScroll = () => {
+    const position = window.scrollY;
+    setSrollPosition(position);
+    // console.log(scrollPosition)
+  };
+
 
   useEffect(() => {
     getUpcomingMovies();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+
   }, []);
 
   const getUpcomingMovies = async () => {
@@ -16,14 +32,26 @@ const UpcomingMovies = () => {
     );
     const Json = await data.json();
     setUpcomingMovies(Json.results);
-    console.log(Json.results);
+    // console.log(Json.results);
   };
 
-  if (UpcomingMovies)
+  if (upcomingMovies)
     return (
-      <div>
-        {UpcomingMovies.map((items) => <UpcomingCard key={items.id} data={items}/>)}
-        <div>Upcoming Movies</div>
+      <div className="mx-28 mt-36">
+        <div className='h-1 '></div>
+        {scrollPosition>=148 && (
+          <div className='animate-topComingUpcoming opacity-0'>
+            <div className="flex justify-center mb-16 text-[2.5rem] font-normal ">
+              Upcoming Movies
+            </div>
+            <div className="flex overflow-x-auto overflow-y-clip scrollbar-hide justify-start snap-x scroll-smooth box-border  hover:shadow-red-700 hover:shadow-lg">
+              {upcomingMovies.map((items) => (
+                <UpcomingCard key={items.id} data={items} />
+              ))}
+            </div>
+          </div>
+        )}
+
       </div>
     );
 };
