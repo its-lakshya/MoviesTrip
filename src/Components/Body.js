@@ -2,6 +2,7 @@ import React from "react";
 import PopularMovies from "./PopularMovies";
 import UpcomingMovies from "./UpcomingMovies";
 import TopRatedMovies from "./TopRatedMovies";
+import Tranding from "./Tranding";
 
 const Body = () => {
   
@@ -18,6 +19,7 @@ const Body = () => {
       <PopularMovies/>
       <UpcomingMovies/>
       <TopRatedMovies/>
+      <Tranding/>
     </div>
   );
 };

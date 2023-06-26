@@ -1,12 +1,12 @@
 import React from "react";
 import { IMAGES_BASE_URL } from "../Constants";
 
-const TopRatedCard = ({ data }) => {
+const TrandingCard = ({ data }) => {
   // console.log(data.id)
   return (
-    <div className="animate-horizontalAutoScrollRight-infinite">
+    <div className="hover:animate-trandingCard ">
       <div
-        className="scroll-none cursor-pointer w-48 h-80 box-border flex flex-col justify-end  mx-4 snap-start  hover:scale-110 hover:shadow-red-700 hover:shadow-lg"
+        className="scroll-none cursor-pointer w-48 h-80 box-border flex flex-col justify-end  mx-4 snap-start hover:rounded-md  hover:shadow-red-700 hover:shadow-xl"
         style={{
           backgroundImage: `url(${IMAGES_BASE_URL + data.poster_path})`,
         }}
@@ -20,4 +20,4 @@ const TopRatedCard = ({ data }) => {
   );
 };
 
-export default TopRatedCard;
+export default TrandingCard;

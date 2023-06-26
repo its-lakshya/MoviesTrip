@@ -4,8 +4,8 @@ import { BiSearch, BiUser } from "react-icons/bi";
 
 const Header = () => {  
   return (
-    <div className="fixed bg-opacity-95 bg-black h-20 w-full z-10">
-      <div className="flex justify-between mx-28 pt-3">
+    <div className="fixed bg-opacity-95 bg-black h-16 w-full z-10">
+      <div className="flex justify-between mx-28 pt-2">
         <div className='flex items-center cursor-pointer'>logo</div>
         <div className="flex justify-evenly w-96 [&>*]:flex [&>*]:[&>*]:mt-1.5 items-center ml-16 [&>span]:cursor-pointer">
           <span className='hover:text-red-600'>
