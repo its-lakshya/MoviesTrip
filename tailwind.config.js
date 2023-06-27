@@ -38,6 +38,11 @@ module.exports = {
           to: { transform: "translateY(-380px);", opacity: 1 },
         },
 
+        topComingAbout: {
+          from: { transform: "translateY(0);", opacity: 0 },
+          to: { transform: "translateY(-180px);", opacity: 1 },
+        },
+
         trandingBgChange: {
           from:{ background: "transparent"},
           to:{ background:'rgba(255, 0, 0, 0.15)',},
@@ -69,6 +74,7 @@ module.exports = {
         topComingUpcoming: "topComingUpcoming 0.6s ease-in-out forwards 500ms",
         topComingTopRated: "topComingTopRated 0.8s ease-in-out forwards 500ms",
         topComingTranding: "topComingTranding 0.8s ease-in-out forwards 500ms",
+        topComingAbout: "topComingAbout 0.8s ease-in-out forwards 500ms",
         trandingBgChange: "trandingBgChange 0.6s ease-in-out forwards 500ms",
         trandingCard: "trandingCard 0.2s ease-in-out forwards 100ms",
       },

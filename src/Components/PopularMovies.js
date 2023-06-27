@@ -44,11 +44,11 @@ const PopularMovies = () => {
   //   console.log(popularMoviesdetails);
   // };
 
-  if (popularMovies)
+  // if (popularMovies)
     return (
       <div className="mb-24">
         <div className="w-full h-screen bg-gradient-to-r from-black to-red-700">
-          <div className="h-screen flex flex-row items-center opacity-0 animate-popularMovies">
+          {popularMovies && <div className="h-screen flex flex-row items-center opacity-0 animate-popularMovies">
             <div className=" w-[40rem] h-[30rem] ml-28 cursor-pointer  flex flex-col justify-center ">
               <div className="flex flex-col mt-10 gap-6">
                 <h1 className="font-bold font-sans  text-7xl">
@@ -91,7 +91,8 @@ const PopularMovies = () => {
                 IMAGES_BASE_URL + popularMovies[popularMoviesNumber].poster_path
               }
             />
-          </div>
+          </div>} 
+          
         </div>
       </div>
     );

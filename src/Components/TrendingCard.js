@@ -1,7 +1,7 @@
 import React from "react";
 import { IMAGES_BASE_URL } from "../Constants";
 
-const TrandingCard = ({ data }) => {
+const TrendingCard = ({ data }) => {
   // console.log(data.id)
   return (
     <div className="hover:animate-trandingCard ">
@@ -20,4 +20,4 @@ const TrandingCard = ({ data }) => {
   );
 };
 
-export default TrandingCard;
+export default TrendingCard;

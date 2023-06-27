@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { options } from "../Constants";
-import TrandingCard from "./TrandingCard";
+import TrendingCard from "./TrendingCard";
 
-const Tranding = () => {
-  const [tranding, setTranding] = useState(null);
+const Trending = () => {
+  const [trending, setTrending] = useState(null);
 
   const [scrollPosition, setSrollPosition] = useState(0);
 
@@ -14,7 +14,7 @@ const Tranding = () => {
   };
 
   useEffect(() => {
-    getTranding();
+    getTrending();
 
     window.addEventListener("scroll", handleScroll, { passive: true });
 
@@ -24,28 +24,28 @@ const Tranding = () => {
 
   }, []);
 
-  const getTranding = async () => {
+  const getTrending = async () => {
     const data = await fetch(
       "https://api.themoviedb.org/3/trending/all/day?language=en-US",
       options
     );
     const Json = await data.json();
-    setTranding(Json.results);
+    setTrending(Json.results);
     // console.log(Json.results);
   };
 
-  if (tranding)
+  if (trending)
     return (
       <div className="mx-28 mt-40">
         <div className="h-1 "></div>
         {scrollPosition >= 1150 && (
           <div className="animate-topComingTranding opacity-0 ">
             <div className="flex justify-center mb-8 text-[2.5rem] font-normal">
-              Tranding
+              Trending
             </div>
             <div className="hover:animate-trandingBgChange py-4 flex flex-wrap justify-center gap-y-8  scrollbar-hide snap-x scroll-smooth box-border ">
-              {tranding.map((items) => (
-                <TrandingCard key={items.id} data={items} />
+              {trending.map((items) => (
+                <TrendingCard key={items.id} data={items} />
               ))}
             </div>
           </div>
@@ -54,4 +54,4 @@ const Tranding = () => {
     );
 };
 
-export default Tranding;
+export default Trending;
