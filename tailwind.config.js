@@ -48,6 +48,11 @@ module.exports = {
           to:{ background:'rgba(255, 0, 0, 0.15)',},
         },
 
+        tagsBgChange: {
+          from:{ background: "transparent"},
+          to:{ background:'rgba(255, 0, 0, 0.4)',},
+        },
+
         trandingCard: {
           from:{ transform: 'scale(1)'},
           to:{ transform: 'scale(1.2)',},
@@ -77,6 +82,7 @@ module.exports = {
         topComingAbout: "topComingAbout 0.8s ease-in-out forwards 500ms",
         trandingBgChange: "trandingBgChange 0.6s ease-in-out forwards 500ms",
         trandingCard: "trandingCard 0.2s ease-in-out forwards 100ms",
+        tagsBgChange: "tagsBgChange 0.3s ease-in-out forwards 100ms",
       },
     },
   },

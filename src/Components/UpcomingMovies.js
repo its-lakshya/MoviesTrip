@@ -32,7 +32,7 @@ const UpcomingMovies = () => {
     );
     const Json = await data.json();
     setUpcomingMovies(Json.results);
-    // console.log(Json.results);
+    // console.log(Json);
   };
 
   if (upcomingMovies)

@@ -13,15 +13,15 @@ const AboutPage = () => {
       </div>
       <div className="flex flex-col justify-between mt-80 mx-28 items-center animate-topComingAbout opacity-0 ">
         <div className="flex justify-between w-full items-center ">
-          <div className="h-[36rem] shadow-lg shadow-black bg-gradient-to-b from-red-700 to-black">
-          <img
-            className="w-64 h-[22rem] rounde-lg"
-            alt="developerImage"
-            src={developerImage}
-          />
+          <div className="h-[36rem]  shadow-lg shadow-black bg-gradient-to-b from-red-700 to-black">
+            <img
+              className="w-60 h-[18rem] rounde-lg"
+              alt="developerImage"
+              src={developerImage}
+            />
           </div>
           <div className="w-2/3 h-96 flex flex-col items-center shadow-inner shadow-red-700">
-          <div className='text-5xl font-light my-4 '>Lakshya Kumar</div>
+            <div className="text-5xl font-light my-4 ">Lakshya Kumar</div>
           </div>
         </div>
       </div>
