@@ -43,7 +43,7 @@ const Trending = () => {
             <div className="flex justify-center mb-8 text-[2.5rem] font-normal">
               Trending
             </div>
-            <div className="hover:animate-trandingBgChange py-4 flex flex-wrap justify-center gap-y-8  scrollbar-hide snap-x scroll-smooth box-border ">
+            <div className="hover:animate-trandingBgChange py-4 flex flex-wrap justify-center scrollbar-hide snap-x scroll-smooth box-border ">
               {trending.map((items) => (
                 <TrendingCard key={items.id} data={items} />
               ))}

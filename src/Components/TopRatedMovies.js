@@ -44,7 +44,7 @@ const TopRatedMovies = () => {
             <div className="flex justify-center mb-8 text-[2.5rem] font-normal">
               Top Rated Movies
             </div>
-            <div className="flex justify-start overflow-x-auto overflow-y-clip scrollbar-hide snap-x scroll-smooth box-border  hover:shadow-red-700 hover:shadow-lg">
+            <div className="flex justify-start overflow-x-auto overflow-y-clip scrollbar-hide snap-x scroll-smooth box-border">
               {topRatedMovies.map((items) => (
                 <TopRatedCard key={items.id} data={items} />
               ))}

@@ -44,7 +44,7 @@ const UpcomingMovies = () => {
             <div className="flex justify-center mb-8 text-[2.5rem] font-normal ">
               Upcoming Movies
             </div>
-            <div className="flex overflow-x-auto overflow-y-clip scrollbar-hide justify-start snap-x scroll-smooth box-border  hover:shadow-red-700 hover:shadow-lg">
+            <div className="flex overflow-x-auto overflow-y-clip scrollbar-hide justify-start snap-x scroll-smooth box-border  ">
               {upcomingMovies.map((items) => (
                 <UpcomingCard key={items.id} data={items} />
               ))}

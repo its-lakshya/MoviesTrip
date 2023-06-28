@@ -3,6 +3,9 @@ import Body from './Components/Body';
 import Header from './Components/Header';
 import AboutPage from './Components/AboutPage';
 import { RouterProvider, createBrowserRouter, Outlet } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './Utils/store';
+import SearchResultsPage from './Components/SearchResultsPage';
 
 
 const AppLayout = () => {
@@ -24,8 +27,12 @@ const appRouter = createBrowserRouter([{
       element:<Body/>
     },
     {
-      path:'/about',
+      path:'about',
       element:<AboutPage/>
+    },
+    {
+      path:'search',
+      element:<SearchResultsPage/>
     }
   ]
 }])
@@ -33,9 +40,11 @@ const appRouter = createBrowserRouter([{
 
 function App() {
   return (
+      <Provider store={store}>
     <div className="h-full w-full bg-black bg-opacity-95 font-bold text-white scroll-smooths">
       <RouterProvider router={appRouter}/>
     </div>
+      </Provider>
   );
 }
 

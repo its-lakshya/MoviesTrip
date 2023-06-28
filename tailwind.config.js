@@ -43,29 +43,33 @@ module.exports = {
           to: { transform: "translateY(-180px);", opacity: 1 },
         },
 
+        topComingSearchResultsPage: {
+          from: { transform: "translateY(0);", opacity: 0 },
+          to: { transform: "translateY(-280px);", opacity: 1 },
+        },
+
         trandingBgChange: {
-          from:{ background: "transparent"},
-          to:{ background:'rgba(255, 0, 0, 0.15)',},
+          from: { background: "transparent" },
+          to: { background: "rgba(255, 0, 0, 0.1)" },
         },
 
         tagsBgChange: {
-          from:{ background: "transparent"},
-          to:{ background:'rgba(255, 0, 0, 0.4)',},
+          from: { background: "transparent" },
+          to: { background: "rgba(255, 0, 0, 0.4)" },
         },
 
         trandingCard: {
-          from:{ transform: 'scale(1)'},
-          to:{ transform: 'scale(1.2)',},
+          from: { transform: "scale(1)" },
+          to: { transform: "scale(1.2)" },
         },
 
         popularMovies: {
-          '0%' : { opacity:0 },
-          '10%' : { opacity:0},
-          '50%' : { opacity:1 },
-          '90%' : { opacity:1 },
-          '100%' : { opacity:0 },
-        }
-
+          "0%": { opacity: 0 },
+          "10%": { opacity: 0 },
+          "50%": { opacity: 1 },
+          "90%": { opacity: 1 },
+          "100%": { opacity: 0 },
+        },
       },
       animation: {
         // 'spin-slow-30': 'spin 30s linear infinite',
@@ -80,8 +84,10 @@ module.exports = {
         topComingTopRated: "topComingTopRated 0.8s ease-in-out forwards 500ms",
         topComingTranding: "topComingTranding 0.8s ease-in-out forwards 500ms",
         topComingAbout: "topComingAbout 0.8s ease-in-out forwards 500ms",
-        trandingBgChange: "trandingBgChange 0.6s ease-in-out forwards 500ms",
-        trandingCard: "trandingCard 0.2s ease-in-out forwards 100ms",
+        trandingBgChange: "trandingBgChange 0.3s ease-in-out forwards 100ms",
+        topComingSearchResultsPage:
+          "topComingSearchResultsPage 0.8s ease-in-out forwards 500ms",
+        trandingCard: "trandingCard 0.3s ease-in-out forwards 100ms",
         tagsBgChange: "tagsBgChange 0.3s ease-in-out forwards 100ms",
       },
     },

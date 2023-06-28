@@ -2,7 +2,8 @@ import React from "react";
 import image from "../Assets/MoviesTrip_AboutMe_Background.jpg";
 import developerImage from "../Assets//MUN_Photo.jpg";
 
-const AboutPage = () => {
+
+const AboutPage = () => {  
   return (
     // <div className="">
     <div className="w-full mt-16 bg-black bg-opacity-95 min-h-screen ">
@@ -13,9 +14,9 @@ const AboutPage = () => {
       </div>
       <div className="flex flex-col justify-between mt-80 mx-28 items-center animate-topComingAbout opacity-0 ">
         <div className="flex justify-between w-full items-center ">
-          <div className="h-[36rem]  shadow-lg shadow-black bg-gradient-to-b from-red-700 to-black">
+          <div className="h-[36rem]   shadow-lg shadow-black bg-gradient-to-b from-red-700 to-black">
             <img
-              className="w-60 h-[18rem] rounde-lg"
+              className="w-60 h-[18rem] hover:translate-y-72 hover:ease-in-out hover:delay-300 hover:transition-all"
               alt="developerImage"
               src={developerImage}
             />

@@ -47,8 +47,8 @@ const PopularMovies = () => {
 
   // if (popularMovies)
     return (
-      <div className="mb-24">
-        <div className="w-full h-screen bg-gradient-to-r from-black to-red-700">
+      // <div className="">
+        <div className=" mb-24 w-full h-screen bg-gradient-to-r from-black to-red-700">
           {popularMovies && <div className="h-screen flex flex-row items-center opacity-0 animate-popularMovies">
             <div className=" w-[40rem] h-[30rem] ml-28 cursor-pointer  flex flex-col justify-center ">
               <div className="flex flex-col mt-10 gap-6">
@@ -95,7 +95,7 @@ const PopularMovies = () => {
           </div>} 
           
         </div>
-      </div>
+      // </div>
     );
 };
 

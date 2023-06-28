@@ -2,11 +2,22 @@ import React from "react";
 // import { IoMdArrowDropdown } from "react-icons/io";
 import { BiSearch, BiUser } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import AboutPage from "./AboutPage";
+// import AboutPage from "./AboutPage";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { search } from "../Utils/tagSearchSlice";
 
 const Header = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+
+  const dispatch = useDispatch();
+
+  const dispatchHandeler = ({ data }) => {
+    // console.log(data.type, data.extra, data.id);
+    dispatch(search(data));
+    navigate("/search");
+  };
+
   return (
     <div className="fixed top-0 bg-opacity-95 bg-black h-16 w-full z-10 flex flex-col">
       <div className="flex justify-between mx-28 pt-2">
@@ -20,16 +31,95 @@ const Header = () => {
           </Link>
           <div className="hover:text-red-600 hover:font-normal cursor-pointer relative group flex flex-col px-2">
             Tags
-            <ul className='w-60 h-[22rem]  bg-black text-white font-light [&>*]:my-2  [&>*]:px-4   absolute m-[2.5rem] py-4 px-3 invisible group-hover:visible hover:visible '>
-                <li className='hover:animate-tagsBgChange' onClick={()=> navigate('/about')}><Link>Movies</Link></li>
-                <li className='hover:animate-tagsBgChange'><Link>Popular Movies</Link></li>
-                <li className='hover:animate-tagsBgChange'><Link>Upcoming Movies</Link></li>
-                <li className='hover:animate-tagsBgChange'><Link>Top Rated Movies</Link></li>
-                <li className='hover:animate-tagsBgChange'><Link>Trending Movies</Link></li>
-                <li className='hover:animate-tagsBgChange'><Link>TV</Link></li>
-                <li className='hover:animate-tagsBgChange'><Link>On Air</Link></li>
-                <li className='hover:animate-tagsBgChange'><Link>Popular Series</Link></li>
-                <li className='hover:animate-tagsBgChange'><Link>Top Rated Series</Link></li>
+            <ul className="w-60 h-[18rem]  bg-black text-white font-light [&>*]:my-2  [&>*]:px-4   absolute m-[2.5rem] py-4 px-3 invisible group-hover:visible hover:visible ">
+              {/* <li
+                className="hover:animate-tagsBgChange"
+                onClick={() =>
+                  dispatchHandeler({ data: { type: "", extra: "", id: "" } })
+                }
+              >
+                <Link>Movies</Link>
+              </li> */}
+              <li
+                className="hover:animate-tagsBgChange"
+                onClick={() =>
+                  dispatchHandeler({
+                    data: { type: "movie", extra: "popular", id: "", title:'Popular Movies' },
+                  })
+                }
+              >
+                Popular Movies
+              </li>
+              <li
+                className="hover:animate-tagsBgChange"
+                onClick={() =>
+                  dispatchHandeler({
+                    data: { type: "movie", extra: "upcoming", id: "", title:'Upcoming Movies' },
+                  })
+                }
+              >
+                Upcoming Movies
+              </li>
+              <li
+                className="hover:animate-tagsBgChange"
+                onClick={() =>
+                  dispatchHandeler({
+                    data: { type: "movie", extra: "top_rated", id: "", title:'Top Rated Movies' },
+                  })
+                }
+              >
+                Top Rated Movies
+              </li>
+              <li
+                className="hover:animate-tagsBgChange"
+                onClick={() =>
+                  dispatchHandeler({
+                    data: { type: "trending", extra: "all/day", id: "", title:'Trending' },
+                  })
+                }
+              >
+                Trending
+              </li>
+              {/* <li
+                className="hover:animate-tagsBgChange"
+                onClick={() =>
+                  dispatchHandeler({
+                    data: { type: "trending", extra: "tv/day", id: "" },
+                  })
+                }
+              >
+                <Link>TV</Link>
+              </li> */}
+              <li
+                className="hover:animate-tagsBgChange"
+                onClick={() =>
+                  dispatchHandeler({
+                    data: { type: "tv", extra: "airing_today", id: "", title:'Airing today' },
+                  })
+                }
+              >
+                Airing Today
+              </li>
+              <li
+                className="hover:animate-tagsBgChange"
+                onClick={() =>
+                  dispatchHandeler({
+                    data: { type: "tv", extra: "popular", id: "", title:'Popular Series' },
+                  })
+                }
+              >
+                Popular Series
+              </li>
+              <li
+                className="hover:animate-tagsBgChange"
+                onClick={() =>
+                  dispatchHandeler({
+                    data: { type: "tv", extra: "top_rated", id: "", title:'Top Rated Series' },
+                  })
+                }
+              >
+                Top Rated Series
+              </li>
             </ul>
           </div>
         </div>
