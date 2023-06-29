@@ -13,7 +13,6 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const dispatchHandeler = ({ data }) => {
-    // console.log(data.type, data.extra, data.id);
     dispatch(search(data));
     navigate("/search");
   };
@@ -31,15 +30,7 @@ const Header = () => {
           </Link>
           <div className="hover:text-red-600 hover:font-normal cursor-pointer relative group flex flex-col px-2">
             Tags
-            <ul className="w-60 h-[18rem]  bg-black text-white font-light [&>*]:my-2  [&>*]:px-4   absolute m-[2.5rem] py-4 px-3 invisible group-hover:visible hover:visible ">
-              {/* <li
-                className="hover:animate-tagsBgChange"
-                onClick={() =>
-                  dispatchHandeler({ data: { type: "", extra: "", id: "" } })
-                }
-              >
-                <Link>Movies</Link>
-              </li> */}
+            <ul className="w-60 h-[16rem]  bg-black text-white font-light [&>*]:my-2  [&>*]:px-4   absolute m-[2.5rem] py-4 px-3 invisible group-hover:visible hover:visible ">
               <li
                 className="hover:animate-tagsBgChange"
                 onClick={() =>
@@ -70,26 +61,6 @@ const Header = () => {
               >
                 Top Rated Movies
               </li>
-              <li
-                className="hover:animate-tagsBgChange"
-                onClick={() =>
-                  dispatchHandeler({
-                    data: { type: "trending", extra: "all/day", id: "", title:'Trending' },
-                  })
-                }
-              >
-                Trending
-              </li>
-              {/* <li
-                className="hover:animate-tagsBgChange"
-                onClick={() =>
-                  dispatchHandeler({
-                    data: { type: "trending", extra: "tv/day", id: "" },
-                  })
-                }
-              >
-                <Link>TV</Link>
-              </li> */}
               <li
                 className="hover:animate-tagsBgChange"
                 onClick={() =>

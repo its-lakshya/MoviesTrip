@@ -2,7 +2,7 @@ import React from "react";
 import PopularMovies from "./PopularMovies";
 import UpcomingMovies from "./UpcomingMovies";
 import TopRatedMovies from "./TopRatedMovies";
-import Trending from "./Trending";
+import PopularSeries from "./PopularSeries";
 
 
 
@@ -22,7 +22,7 @@ const Body = () => {
       <PopularMovies/>
       <UpcomingMovies/>
       <TopRatedMovies/>
-      <Trending/>
+      <PopularSeries/>
     </div>
   );
 };

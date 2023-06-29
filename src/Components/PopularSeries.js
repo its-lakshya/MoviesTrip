@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { options } from "../Constants";
-import TrendingCard from "./TrendingCard";
+import PopularSeriesCard from "./PopularSeriesCard";
 
-const Trending = () => {
+const PopularSeries = () => {
   const [trending, setTrending] = useState(null);
 
   const [scrollPosition, setSrollPosition] = useState(0);
@@ -17,7 +17,6 @@ const Trending = () => {
     getTrending();
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -26,7 +25,7 @@ const Trending = () => {
 
   const getTrending = async () => {
     const data = await fetch(
-      "https://api.themoviedb.org/3/trending/all/day?language=en-US",
+      'https://api.themoviedb.org/3/tv/popular?language=en-US&page=1',
       options
     );
     const Json = await data.json();
@@ -41,11 +40,11 @@ const Trending = () => {
         {scrollPosition >= 1150 && (
           <div className="animate-topComingTranding opacity-0 ">
             <div className="flex justify-center mb-8 text-[2.5rem] font-normal">
-              Trending
+              Popular Series
             </div>
             <div className="hover:animate-trandingBgChange py-4 flex flex-wrap justify-center scrollbar-hide snap-x scroll-smooth box-border ">
               {trending.map((items) => (
-                <TrendingCard key={items.id} data={items} />
+                <PopularSeriesCard key={items.id} data={items} />
               ))}
             </div>
           </div>
@@ -54,4 +53,4 @@ const Trending = () => {
     );
 };
 
-export default Trending;
+export default PopularSeries;

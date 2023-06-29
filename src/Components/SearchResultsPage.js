@@ -39,7 +39,7 @@ const SearchResultsPage = () => {
             </div>
             <div className='w-full flex flex-wrap justify-center snap-x gap-y-12 scroll-smooth box-border mt-24'>
               {searchResults.map((items) => (
-                <SearchResultsCard key={items.id} data={items} />
+                <SearchResultsCard key={items.id} data={items}/>
               ))}
             </div>
           </div>

@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import tagSlice from './tagSearchSlice';
+import tagSearchSlice from './tagSearchSlice';
+import detailsSlice from './detailsSlice';
 
 const store = configureStore({
     reducer:{
-        tagSearch:tagSlice
+        tagSearch:tagSearchSlice,
+        details:detailsSlice,
 
     }
 })

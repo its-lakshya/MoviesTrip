@@ -1,13 +1,26 @@
 import React from "react";
 import { IMAGES_BASE_URL } from "../Constants";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { searchDetails } from "../Utils/detailsSlice";
 
-const TrendingCard = ({ data }) => {
-  // console.log(data.id)
+const PopularSeriesCard = ({ data }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const detailsHandler = ({ data }) => {
+    dispatch(searchDetails(data));
+    navigate("details");
+  };
+
   return (
-    <div className="hover:animate-trandingCard my-6 border-l-4 border-red-700 mx-4">
-      <div
-        className="scroll-none cursor-pointer w-48 box-border flex flex-col justify-start snap-start hover:rounded-md  hover:shadow-red-700 hover:shadow-xl"
-      >
+    <div
+      className="hover:animate-trandingCard my-6 border-l-4 border-red-700 mx-4"
+      onClick={() =>
+        detailsHandler({ data: { type: "trending", id: data.id } })
+      }
+    >
+      <div className="scroll-none cursor-pointer w-48 box-border flex flex-col justify-start snap-start hover:rounded-md  hover:shadow-red-700 hover:shadow-xl">
         <img
           className=""
           alt="bgImg"
@@ -31,4 +44,4 @@ const TrendingCard = ({ data }) => {
   );
 };
 
-export default TrendingCard;
+export default PopularSeriesCard;
