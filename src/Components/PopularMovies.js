@@ -36,7 +36,6 @@ const PopularMovies = () => {
     );
     const Json = await data.json();
     setPopularMovies(Json.results);
-    // console.log(Json.results)
   };
   return (
     <div className=" mb-24 w-full h-screen bg-gradient-to-r from-black to-red-700">
@@ -52,7 +51,7 @@ const PopularMovies = () => {
           >
             <div className="flex flex-col mt-10 gap-6">
               <h1 className="font-bold font-sans  text-7xl">
-                {popularMovies[popularMoviesNumber].original_title}
+                {popularMovies[popularMoviesNumber].title}
               </h1>
 
               <div className="font-thin text-lg">

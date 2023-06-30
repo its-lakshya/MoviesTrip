@@ -33,7 +33,7 @@ module.exports = {
           to: { transform: "translateY(-280px);", opacity: 1 },
         },
 
-        topComingTranding: {
+        topComingPopularSeries: {
           from: { transform: "translateY(0);", opacity: 0 },
           to: { transform: "translateY(-380px);", opacity: 1 },
         },
@@ -48,7 +48,7 @@ module.exports = {
           to: { transform: "translateY(-280px);", opacity: 1 },
         },
 
-        trandingBgChange: {
+        popularSeriesBgChange: {
           from: { background: "transparent" },
           to: { background: "rgba(255, 0, 0, 0.1)" },
         },
@@ -58,7 +58,7 @@ module.exports = {
           to: { background: "rgba(255, 0, 0, 0.4)" },
         },
 
-        trandingCard: {
+        popularSeriesCard: {
           from: { transform: "scale(1)" },
           to: { transform: "scale(1.2)" },
         },
@@ -82,12 +82,12 @@ module.exports = {
           "horizontalAutoScrollLeft 60s linear infinite 1000ms",
         topComingUpcoming: "topComingUpcoming 0.6s ease-in-out forwards 500ms",
         topComingTopRated: "topComingTopRated 0.8s ease-in-out forwards 500ms",
-        topComingTranding: "topComingTranding 0.8s ease-in-out forwards 500ms",
+        topComingPopularSeries: "topComingPopularSeries 0.8s ease-in-out forwards 500ms",
         topComingAbout: "topComingAbout 0.8s ease-in-out forwards 500ms",
-        trandingBgChange: "trandingBgChange 0.3s ease-in-out forwards 100ms",
+        popularSeriesBgChange: "popularSeriesBgChange 0.3s ease-in-out forwards 100ms",
         topComingSearchResultsPage:
           "topComingSearchResultsPage 0.8s ease-in-out forwards 500ms",
-        trandingCard: "trandingCard 0.3s ease-in-out forwards 100ms",
+        popularSeriesCard: "popularSeriesCard 0.3s ease-in-out forwards 100ms",
         tagsBgChange: "tagsBgChange 0.3s ease-in-out forwards 100ms",
       },
     },

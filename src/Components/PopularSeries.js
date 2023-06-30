@@ -10,7 +10,6 @@ const PopularSeries = () => {
   const handleScroll = () => {
     const position = window.scrollY;
     setSrollPosition(position);
-    // console.log(position)
   };
 
   useEffect(() => {
@@ -38,11 +37,11 @@ const PopularSeries = () => {
       <div className="mx-28 mt-40">
         <div className="h-1 "></div>
         {scrollPosition >= 1150 && (
-          <div className="animate-topComingTranding opacity-0 ">
+          <div className="animate-topComingPopularSeries opacity-0 ">
             <div className="flex justify-center mb-8 text-[2.5rem] font-normal">
               Popular Series
             </div>
-            <div className="hover:animate-trandingBgChange py-4 flex flex-wrap justify-center scrollbar-hide snap-x scroll-smooth box-border ">
+            <div className="hover:animate-popularSeriesBgChange py-4 flex flex-wrap justify-center scrollbar-hide snap-x scroll-smooth box-border ">
               {trending.map((items) => (
                 <PopularSeriesCard key={items.id} data={items} />
               ))}

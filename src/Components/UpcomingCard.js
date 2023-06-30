@@ -28,7 +28,7 @@ const UpcomingCard = ({ data }) => {
         />
         <div className="bg-gradient-to-t font-normal capitalize from-black to-transparent pl-2 transition-all ease-in-out delay-150 hover:bg-gradient-to-t hover:from-transparent hover:to-transparent">
           <div className="text-xl font-normal overflow-hidden h-8">
-            {data.original_title}
+            {data.title}
           </div>
           <div className="text-xs">{data.vote_average}</div>
         </div>

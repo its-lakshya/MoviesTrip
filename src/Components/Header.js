@@ -94,7 +94,7 @@ const Header = () => {
             </ul>
           </div>
         </div>
-        <div className="flex justify-evenly w-28 items-center text-xl [&>*]:cursor-pointer ">
+        <div className="flex justify-evenly w-28 -mr-7 items-center text-xl [&>*]:cursor-pointer ">
           <BiSearch className="hover:text-red-800 text-2xl" />
           <div className="bg-black w-12 h-12 rounded-3xl flex justify-center items-center hover:text-red-800 text-2xl">
             <BiUser />

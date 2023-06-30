@@ -18,7 +18,7 @@ const SearchResultsCard = ({ data }) => {
   // if(type)
   return (
     <div
-      className="w-60 h-[28rem] mx-4 flex flex-col gap-y-4 border-y-4 border-red-700 hover:animate-trandingCard hover:shadow-red-700 hover:shadow-lg"
+      className="w-60 h-[28rem] mx-4 flex flex-col gap-y-4 border-y-4 border-red-700 hover:animate-popularSeriesCard hover:shadow-red-700 hover:shadow-lg"
       onClick={() => detailsHandler({ data: { type:dataType.type, id: data.id } })}
     >
       <img className="" alt="bgImg" src={IMAGES_BASE_URL + data.poster_path} />
@@ -26,14 +26,14 @@ const SearchResultsCard = ({ data }) => {
         {data.original_title && (
           <>
             <div className="text-2xl font-normal overflow-clip h-8">
-              {data.original_title}
+              {data.title}
             </div>
           </>
         )}
         {data.original_name && (
           <>
             <div className="text-2xl font-normal overflow-hidden h-8">
-              {data.original_name}
+              {data.name}
             </div>
           </>
         )}
