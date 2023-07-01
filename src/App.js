@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import store from "./Utils/store";
 import DetailsPage from "./Components/DetailsPage";
 import TagsResultsPage from "./Components/TagsResultsPage";
+import SearchResultsPage from "./Components/SearchResultsPage";
 
 const AppLayout = () => {
   return (
@@ -36,6 +37,10 @@ const appRouter = createBrowserRouter([
         children: [
           
         ],
+      },
+      {
+        path: "search",
+        element: <SearchResultsPage />,
       },
       {
         path: "details",

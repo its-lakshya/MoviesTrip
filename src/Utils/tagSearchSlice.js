@@ -6,11 +6,11 @@ const tagSearchSlice = createSlice({
     data: null,
   },
   reducers: {
-    search: (state, action) => {
+    tagSearch: (state, action) => {
       state.data = action.payload;
     },
   },
 });
 
-export const { search } = tagSearchSlice.actions;
+export const { tagSearch } = tagSearchSlice.actions;
 export default tagSearchSlice.reducer;

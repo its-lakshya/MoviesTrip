@@ -3,10 +3,11 @@ import { BiSearch, BiUser } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { search } from "../Utils/tagSearchSlice";
+import { tagSearch } from "../Utils/tagSearchSlice";
 import { options } from "../Constants";
+import { search } from "../Utils/searchSlice";
 import { searchDetails } from "../Utils/detailsSlice";
-import SearchResultsCard from "./SearchResultsCard";
+// import SearchResultsPage from "./SearchResultsPage";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -17,15 +18,15 @@ const Header = () => {
   const [searchResults, setSearchResults] = useState("");
 
   const dispatchHandeler = ({ data }) => {
-    dispatch(search(data));
+    dispatch(tagSearch(data));
     navigate("/tag/search");
   };
 
   useEffect(() => {
-    getSearcgDetails();
+    getSearchDetails();
   }, [searchValue]);
 
-  const getSearcgDetails = async () => {
+  const getSearchDetails = async () => {
     const data = await fetch(
       "https://api.themoviedb.org/3/search/multi?query=" +
         searchValue +
@@ -36,16 +37,16 @@ const Header = () => {
     setSearchResults(Json.results);
   };
 
-  const searchClickHandler = ({data}) => {
-      dispatch(searchDetails(data))
-      navigate('/details')
-  }
+  const searchClickHandler = ({ data }) => {
+    dispatch(searchDetails(data));
+    navigate("/details");
+  };
 
-  const searchButtonClickHandler = () => {
-    navigate('/search')
-      searchResults.map((items)=> (<SearchResultsCard key={items.id} data={items}/>))
-    
-  }
+  const searchButtonClickHandler = (data) => {
+    dispatch(search(data))
+    navigate("/search");
+    // console.log(searchResults)
+  };
 
   return (
     <div className="fixed top-0 bg-opacity-95 bg-black h-16 w-full z-10 flex flex-col">
@@ -156,7 +157,7 @@ const Header = () => {
         </div>
         <div className="flex flex-col  w-72 ">
           <div className="flex justify-between ">
-            <form className="mt-3">
+            <form className="mt-3" onSubmit={() => <div></div>}>
               <input
                 className="bg-red-700 w-52 bg-opacity-20 font-light px-3 rounded-lg border-b-2 border-red-700 peer focus:outline-none focus:border-red-700 focus:border"
                 value={searchValue}
@@ -167,25 +168,58 @@ const Header = () => {
                 type="text"
               />
               {searchValue && (
-                <div className="overflow-y-scroll scrollbar-hide w-[13rem] invisible peer-focus:visible hover:visible
+                <div
+                  className="overflow-y-scroll scrollbar-hide w-[13rem] invisible peer-focus:visible hover:visible
                 [&>*]:bg-gradient-to-r [&>*]:from-red-700 [&>*]:to-black flex flex-col gap-y-1 [&>*]:cursor-pointer
-                rounded-lg h-56 bg-black absolute mt-2 text-base font-light px-3">
+                rounded-lg h-56 bg-black absolute mt-2 text-base font-light px-3"
+                >
                   {searchResults.map((items) => {
-                    if (items?.original_title && items?.media_type === 'movie') {
-                      return <div className='hover:border-red-700 hover:border-2' key={items?.id} onClick={()=>(searchClickHandler({data:{type:'movie', id:items?.id}}))}>{items?.title}</div>;
-                    } else if(items?.original_name && items?.media_type === 'tv'){
-                      return <div className='hover:border-red-700 hover:border-2' key={items?.id} onClick={()=>(searchClickHandler({data:{type:'tv', id:items?.id}}, items))}>{items?.name}</div>;
-                    }
-                    else{
-                      return(null)
+                    if (
+                      items?.original_title &&
+                      items?.media_type === "movie"
+                    ) {
+                      return (
+                        <div
+                          className="hover:border-red-700 hover:border-2"
+                          key={items?.id}
+                          onClick={() =>
+                            searchClickHandler({
+                              data: { type: "movie", id: items?.id },
+                            })
+                          }
+                        >
+                          {items?.title}
+                        </div>
+                      );
+                    } else if (
+                      items?.original_name &&
+                      items?.media_type === "tv"
+                    ) {
+                      return (
+                        <div
+                          className="hover:border-red-700 hover:border-2"
+                          key={items?.id}
+                          onClick={() =>
+                            searchClickHandler(
+                              { data: { type: "tv", id: items?.id } },
+                              items
+                            )
+                          }
+                        >
+                          {items?.name}
+                        </div>
+                      );
+                    } else {
+                      return null;
                     }
                   })}
                 </div>
               )}
             </form>
             <div className="flex justify-evenly items-center text-xl [&>*]:cursor-pointer ">
-              <BiSearch className="hover:text-red-800 text-2xl "
-              onClick={()=> (searchButtonClickHandler())}
+              <BiSearch
+                className="hover:text-red-800 text-2xl "
+                onClick={() => searchButtonClickHandler(searchValue)}
               />
               <div className="bg-black w-12 h-12 rounded-3xl flex justify-center items-center hover:text-red-800 text-2xl">
                 <BiUser />

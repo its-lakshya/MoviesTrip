@@ -4,40 +4,42 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { searchDetails } from "../Utils/detailsSlice";
 
-const SearchResultsCard = ({ data }) => {
+const SearchResultsCard = ({ data, type }) => {
 
-  const dataType = useSelector((store) => store.tagSearch.data);
+  const dataType = useSelector((store) => store?.tagSearch?.data);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  // console.log(type)
 
   const detailsHandler = ({ data }) => {
     dispatch(searchDetails(data));
     navigate("/details");
+    console.log(data)
   };
 
   // if(type)
   return (
     <div
       className="w-60 h-[28rem] mx-4 flex flex-col gap-y-4 border-y-4 border-red-700 hover:animate-popularSeriesCard hover:shadow-red-700 hover:shadow-lg"
-      onClick={() => detailsHandler({ data: { type:dataType.type, id: data.id } })}
+      onClick={() => detailsHandler({ data: { type: dataType?.type || type , id: data?.id } })}
     >
-      <img className="" alt="bgImg" src={IMAGES_BASE_URL + data.poster_path} />
+      <img className="" alt="bgImg" src={IMAGES_BASE_URL + data?.poster_path} />
       <div className="font-normal capitaliz px-2 ">
-        {data.original_title && (
+        {data?.original_title && (
           <>
             <div className="text-2xl font-normal overflow-clip h-8">
-              {data.title}
+              {data?.title}
             </div>
           </>
         )}
-        {data.original_name && (
+        {data?.original_name && (
           <>
             <div className="text-2xl font-normal overflow-hidden h-8">
-              {data.name}
+              {data?.name}
             </div>
           </>
         )}
-        <div className="text-sm">{data.vote_average}</div>
+        <div className="text-sm">{data?.vote_average}</div>
       </div>
     </div>
   );
