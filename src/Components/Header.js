@@ -33,8 +33,8 @@ const Header = () => {
         "&include_adult=false&language=en-US&page=1",
       options
     );
-    const Json = await data.json();
-    setSearchResults(Json.results);
+    const Json = await data?.json();
+    setSearchResults(Json?.results);
   };
 
   const searchClickHandler = ({ data }) => {

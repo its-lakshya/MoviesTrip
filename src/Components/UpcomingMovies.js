@@ -30,8 +30,8 @@ const UpcomingMovies = () => {
       "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1",
       options
     );
-    const Json = await data.json();
-    setUpcomingMovies(Json.results);
+    const Json = await data?.json();
+    setUpcomingMovies(Json?.results);
   };
 
   if (upcomingMovies)
@@ -45,7 +45,7 @@ const UpcomingMovies = () => {
             </div>
             <div className="flex overflow-x-auto overflow-y-clip scrollbar-hide justify-start snap-x scroll-smooth box-border  ">
               {upcomingMovies.map((items) => (
-                <UpcomingCard key={items.id} data={items} />
+                <UpcomingCard key={items?.id} data={items} />
               ))}
             </div>
           </div>

@@ -41,7 +41,7 @@ const DetailsPage = () => {
         "?language=en-US",
       options
     );
-    const Json = await data.json();
+    const Json = await data?.json();
     setDetails(Json);
     // console.log(Json);
   };
@@ -55,7 +55,7 @@ const DetailsPage = () => {
         "/images",
       options
     );
-    const Json = await data.json();
+    const Json = await data?.json();
     setImages(Json);
     // console.log(Json);
   };
@@ -69,7 +69,7 @@ const DetailsPage = () => {
         "/recommendations?language=en-US&page=1=en-US",
       options
     );
-    const Json = await data.json();
+    const Json = await data?.json();
     setReommendation(Json);
   };
 

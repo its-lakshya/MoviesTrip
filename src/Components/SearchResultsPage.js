@@ -28,7 +28,7 @@ const SearchResultsPage = ({ data }) => {
       <div className="mx-28 ">
         {searchResults && (
           <div className="animate-topComingSearchResultsPage mt-80 opacity-0">
-              <div className='mt-12 flex justify-center text-lg font-normal'>Showing Results for</div>
+              <div className='mt-12 flex justify-center text-sm font-normal'>Showing Results for</div>
             <div className="h-16 bg-gradient-to-b from-red-700  to-black  flex justify-center items-start font-normal text-4xl">
               {data?.title || searchData}
             </div>

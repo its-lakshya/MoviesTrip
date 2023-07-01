@@ -30,9 +30,8 @@ const TopRatedMovies = () => {
       "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
       options
     );
-    const Json = await data.json();
-    setTopRatedMovies(Json.results);
-    // console.log(Json.results);
+    const Json = await data?.json();
+    setTopRatedMovies(Json?.results);
   };
 
   if (topRatedMovies)
@@ -46,7 +45,7 @@ const TopRatedMovies = () => {
             </div>
             <div className="flex justify-start overflow-x-auto overflow-y-clip scrollbar-hide snap-x scroll-smooth box-border">
               {topRatedMovies.map((items) => (
-                <TopRatedCard key={items.id} data={items} />
+                <TopRatedCard key={items?.id} data={items} />
               ))}
             </div>
           </div>

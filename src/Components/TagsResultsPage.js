@@ -7,7 +7,6 @@ const TagsResultsPage = () => {
   const [searchResults, setSearchResults] = useState(null);
 
   const storeData = useSelector((store) => store?.tagSearch?.data);
-  const dataSearch = useSelector((store)=> store?.search?.data)
 
 
   useEffect(() => {
@@ -25,9 +24,8 @@ const TagsResultsPage = () => {
       // 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc',
       options
     );
-    const Json = await data.json();
+    const Json = await data?.json();
     setSearchResults(Json?.results);
-    // console.log(Json.results);
   };
 
   return (

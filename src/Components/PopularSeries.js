@@ -27,8 +27,8 @@ const PopularSeries = () => {
       'https://api.themoviedb.org/3/tv/popular?language=en-US&page=1',
       options
     );
-    const Json = await data.json();
-    setTrending(Json.results);
+    const Json = await data?.json();
+    setTrending(Json?.results);
     // console.log(Json.results);
   };
 
@@ -43,7 +43,7 @@ const PopularSeries = () => {
             </div>
             <div className="hover:animate-popularSeriesBgChange py-4 flex flex-wrap justify-center scrollbar-hide snap-x scroll-smooth box-border ">
               {trending.map((items) => (
-                <PopularSeriesCard key={items.id} data={items} />
+                <PopularSeriesCard key={items?.id} data={items} />
               ))}
             </div>
           </div>

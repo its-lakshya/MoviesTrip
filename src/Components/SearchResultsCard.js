@@ -17,7 +17,7 @@ const SearchResultsCard = ({ data, type }) => {
     console.log(data)
   };
 
-  // if(type)
+  if(data?.poster_path)
   return (
     <div
       className="w-60 h-[28rem] mx-4 flex flex-col gap-y-4 border-y-4 border-red-700 hover:animate-popularSeriesCard hover:shadow-red-700 hover:shadow-lg"
