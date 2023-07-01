@@ -3,7 +3,7 @@ import { options } from "../Constants";
 import { useSelector } from "react-redux";
 import SearchResultsCard from "./SearchResultsCard";
 
-const SearchResultsPage = () => {
+const TagsResultsPage = () => {
   const [searchResults, setSearchResults] = useState(null);
 
   const storeData = useSelector((store) => store.tagSearch.data);
@@ -49,4 +49,4 @@ const SearchResultsPage = () => {
   );
 };
 
-export default SearchResultsPage;
+export default TagsResultsPage;

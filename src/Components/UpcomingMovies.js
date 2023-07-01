@@ -32,7 +32,6 @@ const UpcomingMovies = () => {
     );
     const Json = await data.json();
     setUpcomingMovies(Json.results);
-    // console.log(Json);
   };
 
   if (upcomingMovies)
@@ -41,7 +40,7 @@ const UpcomingMovies = () => {
         <div className='h-1 '></div>
         {scrollPosition>=148 && (
           <div className='animate-topComingUpcoming opacity-0'>
-            <div className="flex justify-center mb-8 text-[2.5rem] font-normal ">
+            <div className="flex justify-center mb-8 text-[2.5rem] font-normal">
               Upcoming Movies
             </div>
             <div className="flex overflow-x-auto overflow-y-clip scrollbar-hide justify-start snap-x scroll-smooth box-border  ">

@@ -38,11 +38,11 @@ const PopularMovies = () => {
     setPopularMovies(Json.results);
   };
   return (
-    <div className=" mb-24 w-full h-screen bg-gradient-to-r from-black to-red-700">
+    <div className="w-full h-screen bg-gradient-to-r from-black to-red-700">
       {popularMovies && (
-        <div className="h-screen flex flex-row items-center opacity-0 animate-popularMovies">
+        <div className="h-screen mx-28 flex flex-row  justify-center items-center opacity-0 animate-popularMovies">
           <div
-            className=" w-[40rem] h-[30rem] ml-28 cursor-pointer  flex flex-col justify-center transition duration-300 ease-in-out hover:scale-110 hover:shadow-black hover:shadow-lg hover:z-10 "
+            className=" w-[40rem] h-[30rem]  cursor-pointer  flex flex-col justify-center transition duration-300 ease-in-out hover:scale-110 hover:shadow-black hover:shadow-lg hover:z-10 "
             onClick={() =>
               detailsHandler({
                 data: { type: "movie", id:popularMovies[popularMoviesNumber].id },

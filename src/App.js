@@ -5,8 +5,8 @@ import AboutPage from "./Components/AboutPage";
 import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./Utils/store";
-import SearchResultsPage from "./Components/SearchResultsPage";
 import DetailsPage from "./Components/DetailsPage";
+import TagsResultsPage from "./Components/TagsResultsPage";
 
 const AppLayout = () => {
   return (
@@ -31,8 +31,8 @@ const appRouter = createBrowserRouter([
         element: <AboutPage />,
       },
       {
-        path: "search",
-        element: <SearchResultsPage />,
+        path: "tag/search",
+        element: <TagsResultsPage />,
         children: [
           
         ],

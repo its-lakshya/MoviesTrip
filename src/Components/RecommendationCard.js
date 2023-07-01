@@ -23,7 +23,7 @@ const RecommendationCard = ({ data }) => {
     }
   }, []);
 
-  if (type)
+  if (type && data.poster_path)
     return (
       <div
         className="hover:animate-popularSeriesCard my-6 border-l-4 border-red-700 mx-4"
@@ -50,7 +50,7 @@ const RecommendationCard = ({ data }) => {
           </div>
         </div>
       </div>
-    );
+    )
 };
 
 export default RecommendationCard;
