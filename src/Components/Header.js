@@ -45,7 +45,7 @@ const Header = () => {
   const searchButtonClickHandler = (data) => {
     dispatch(search(data))
     navigate("/search");
-    // console.log(searchResults)
+    console.log('clicked')
   };
 
   return (
@@ -157,7 +157,8 @@ const Header = () => {
         </div>
         <div className="flex flex-col  w-72 ">
           <div className="flex justify-between ">
-            <form className="mt-3" onSubmit={() => <div></div>}>
+            <form className="mt-3" onSubmit={(event) => {event.preventDefault()
+               searchButtonClickHandler(searchValue)}}>
               <input
                 className="bg-red-700 w-52 bg-opacity-20 font-light px-3 rounded-lg border-b-2 border-red-700 peer focus:outline-none focus:border-red-700 focus:border"
                 value={searchValue}
