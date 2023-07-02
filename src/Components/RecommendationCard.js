@@ -3,6 +3,7 @@ import { IMAGES_BASE_URL } from "../Constants";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { searchDetails } from "../Utils/detailsSlice";
+import { BsFillStarFill } from "react-icons/bs";
 
 const RecommendationCard = ({ data }) => {
   const [type, setType] = useState(null);
@@ -46,11 +47,14 @@ const RecommendationCard = ({ data }) => {
                 {data?.name}
               </div>
             )}
-            <div className="text-xs">{data?.vote_average}</div>
+            <div className="text-xs flex gap-x-1">
+              {data?.vote_average}
+              <BsFillStarFill className="mt-[0.13rem] text-red-700" />
+            </div>
           </div>
         </div>
       </div>
-    )
+    );
 };
 
 export default RecommendationCard;

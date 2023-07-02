@@ -3,12 +3,14 @@ import { options, IMAGES_BASE_URL } from "../Constants";
 import { useDispatch } from "react-redux";
 import { searchDetails } from "../Utils/detailsSlice";
 import { useNavigate } from "react-router-dom";
+import { BsFillStarFill } from "react-icons/bs";
 
 const PopularMovies = () => {
   const [popularMovies, setPopularMovies] = useState(null);
   let [popularMoviesNumber, setPopularMoviesNumber] = useState(11);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  console.log(process.env.REACT_APP_OPTIONS)
 
   useEffect(() => {
     getPopularMovies();
@@ -31,7 +33,6 @@ const PopularMovies = () => {
   const getPopularMovies = async () => {
     const data = await fetch(
       "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
-      // 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc',
       options
     );
     const Json = await data?.json();
@@ -57,12 +58,13 @@ const PopularMovies = () => {
               <div className="font-thin text-lg">
                 {popularMovies[popularMoviesNumber]?.overview}
               </div>
-              <div>
+              <div className='flex gap-x-2'>
                 <span className="text-red-700 text-xl font-normal">
                   Ratings{" "}
                 </span>
-                <span className="font-medium">
+                <span className="font-medium flex gap-x-1 mt-[0.20rem] ">
                   {popularMovies[popularMoviesNumber]?.vote_average}
+                  <BsFillStarFill className='mt-[0.35rem]  text-red-700 text-sm'/>
                 </span>
               </div>
               <div>
@@ -75,7 +77,7 @@ const PopularMovies = () => {
               </div>
               <div>
                 <span className="text-red-700 text-xl font-normal">
-                  Release{"  "}
+                  Release{"  "} 
                 </span>
                 <span className="font-medium">
                   {popularMovies[popularMoviesNumber]?.release_date}

@@ -3,6 +3,7 @@ import { IMAGES_BASE_URL } from "../Constants";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { searchDetails } from "../Utils/detailsSlice";
+import { BsFillStarFill } from "react-icons/bs";
 
 const TopRatedCard = ({ data }) => {
   const dispatch = useDispatch();
@@ -28,7 +29,10 @@ const TopRatedCard = ({ data }) => {
           <div className="text-xl font-normal overflow-hidden h-8">
             {data?.title}
           </div>
-          <div className="text-xs">{data?.vote_average}</div>
+          <div className="text-xs flex gap-x-1">
+            {data?.vote_average}
+           <BsFillStarFill className='mt-[0.13rem] text-red-700'/>
+          </div>
         </div>
       </div>
     </div>

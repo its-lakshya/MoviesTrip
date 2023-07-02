@@ -3,6 +3,8 @@ import { IMAGES_BASE_URL, options } from "../Constants";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import BackdropCard from "./BackdropCard";
 import RecommendationCard from "./RecommendationCard";
+import { BsFillStarFill } from "react-icons/bs";
+
 
 const DetailsPage = () => {
   const detailsData = useSelector((store) => store?.details?.detailsData);
@@ -135,7 +137,10 @@ const DetailsPage = () => {
                   <div className="text-xl text-red-700 font-normal">
                     Ratings
                   </div>
+                  <div className='flex gap-x-1'>
                   {details?.vote_average}
+                  <BsFillStarFill className='mt-1 text-red-700'/>
+                  </div>
                 </div>
                 <div className="font-light bg-gradient-to-t  from-red-700 from-10% to-transparent to-80%  w-32 max-h-24 rounded-b-2xl flex flex-col items-center hover:from-10% hover:to-60% cursor-pointer">
                   <div className="text-xl text-red-700 font-normal">
