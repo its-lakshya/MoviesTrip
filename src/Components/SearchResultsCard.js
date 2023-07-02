@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { IMAGES_BASE_URL } from "../Constants";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -16,6 +16,17 @@ const SearchResultsCard = ({ data, type }) => {
     navigate("/details");
     console.log(data)
   };
+
+  useEffect(()=>{
+    goToTop()
+  },[data, dataType])
+
+  const goToTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+};
 
   if(data?.poster_path)
   return (

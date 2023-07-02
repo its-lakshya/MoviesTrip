@@ -7,7 +7,6 @@ import RecommendationCard from "./RecommendationCard";
 const DetailsPage = () => {
   const detailsData = useSelector((store) => store?.details?.detailsData);
 
-
   const [scrollPosition, setSrollPosition] = useState(0);
 
   const handleScroll = () => {
@@ -25,12 +24,30 @@ const DetailsPage = () => {
     getImages();
     getRecommendation();
 
+  }, [details]);
+
+
+  useEffect(()=> {
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [details]);
+    
+  },[])
+
+
+  useEffect(()=> {
+    goToTop()
+  },[detailsData])
+
+
+  const goToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   const getDetails = async () => {
     const data = await fetch(
@@ -93,9 +110,7 @@ const DetailsPage = () => {
               src={IMAGES_BASE_URL + images?.posters[0]?.file_path}
             />
             <div className="flex flex-col w-1/4 items-center">
-              <div
-                className=" w-full max-h-[36rem] scrollbar-hide overflow-y-scroll border-red-700 border-x-4 flex flex-col gap-1"
-              >
+              <div className=" w-full max-h-[36rem] scrollbar-hide overflow-y-scroll border-red-700 border-x-4 flex flex-col gap-1">
                 {images?.backdrops.map((items) => (
                   <BackdropCard key={items?.file_path} data={items} />
                 ))}
@@ -147,10 +162,12 @@ const DetailsPage = () => {
           )}
         </div>
       )}
-      <div className='h-36'></div>
-      {(recommendation && scrollPosition >= 500) && (
+      <div className="h-36"></div>
+      {recommendation && scrollPosition >= 500 && (
         <div className="flex flex-col items-center font-normal text-3xl animate-topComingUpcoming scroll-smooth snap-x opacity-0">
-          <div className="bg-gradient-to-r from-red-700 to-transparent">Recommendations</div>
+          <div className="bg-gradient-to-r from-red-700 to-transparent">
+            Recommendations
+          </div>
           <div className="flex flex-wrap justify-start mx-28 mt-8">
             {recommendation?.results.map((items) => (
               <RecommendationCard key={items?.id} data={items} />
