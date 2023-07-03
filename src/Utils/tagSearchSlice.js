@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 const tagSearchSlice = createSlice({
   name: "tagSearch",
   initialState: {
@@ -8,7 +9,7 @@ const tagSearchSlice = createSlice({
   reducers: {
     tagSearch: (state, action) => {
       state.data = action.payload;
-    },
+      },
   },
 });
 
