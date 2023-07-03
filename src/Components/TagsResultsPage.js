@@ -6,13 +6,24 @@ import SearchResultsCard from "./SearchResultsCard";
 const TagsResultsPage = () => {
   const [searchResults, setSearchResults] = useState(null);
 
+  // const [pageNumber, setPageNumber] = useState(1)
+
   const storeData = useSelector((store) => store?.tagSearch?.data);
 
+  // const persistedData  = JSON.parse(localStorage.getItem('apiData') || storeData)
 
   useEffect(() => {
     getSearchResults();
     // console.log(storeData);
   }, [storeData]);
+
+  // useEffect(()=> {
+  //   window.localStorage.setItem('apiData', JSON.stringify(storeData))
+  // },[])
+
+  // const pageNumberHandler = () => {
+  //   setPageNumber(pageNumber+1)
+  // }
 
   const getSearchResults = async () => {
     const data = await fetch(
@@ -20,7 +31,7 @@ const TagsResultsPage = () => {
         storeData?.type +
         "/" +
         storeData?.extra +
-        "?language=en-US&page=1",
+        "?language=en-US&page=1" ,
       // 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc',
       options
     );
@@ -41,6 +52,11 @@ const TagsResultsPage = () => {
                 <SearchResultsCard key={items?.id} data={items}/>
               ))}
             </div>
+            {/* <button className='flex justify-center mt-16' onClick={()=>{
+                pageNumberHandler()
+            }}>
+                Load
+            </button> */}
           </div>
         )}
       </div>
