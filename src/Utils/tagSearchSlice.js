@@ -11,7 +11,7 @@ const tagSearchSlice = createSlice({
   reducers: {
     tagSearch: (state, action) => {
       state.data = action.payload;
-      localStorage.setItem('localStorageData', JSON.stringify(state.detailsData))
+      localStorage.setItem('localStorageData', JSON.stringify(state.data))
       },
   },
 });
