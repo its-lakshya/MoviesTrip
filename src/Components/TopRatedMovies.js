@@ -10,7 +10,6 @@ const TopRatedMovies = () => {
   const handleScroll = () => {
     const position = window.scrollY;
     setSrollPosition(position);
-    // console.log(position)
   };
 
 

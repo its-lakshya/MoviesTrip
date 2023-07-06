@@ -10,8 +10,6 @@ const PopularMovies = () => {
   let [popularMoviesNumber, setPopularMoviesNumber] = useState(11);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log(process.env.REACT_APP_OPTIONS)
-
   useEffect(() => {
     getPopularMovies();
   }, []);
