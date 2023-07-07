@@ -19,7 +19,7 @@ const SearchResultsCard = ({ data, type }) => {
 
   useEffect(() => {
     goToTop();
-  }, [data, dataType]);
+  }, [dataType]);
 
   const goToTop = () => {
     window.scrollTo({
