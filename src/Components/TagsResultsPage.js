@@ -12,7 +12,7 @@ const TagsResultsPage = () => {
 
   useEffect(() => {
     setPage(pageData)
-    getSearchResults();
+    getSearchResults(1);
   }, [storeData]);
 
   useEffect(() => {
@@ -20,17 +20,13 @@ const TagsResultsPage = () => {
 
     return () => {
       window.removeEventListener("scroll", onScroll);
-      // setPage(1)
     };
   }, [searchResults]);
 
   useEffect(() => {
-    if (page > 1) {
-      getSearchResults();
+    if (page > 1 ) {
+      getSearchResults(page);
     }
-    // else if(page===1){
-    //   getSearchResults()
-    // }
   }, [page]);
 
   const onScroll = () => {
@@ -41,11 +37,11 @@ const TagsResultsPage = () => {
     if (scrollTop + clientHeight >= scrollHeight) {
       setPage((prev) => prev + 1);
     } else {
-      setPage(1);
+      setPage(prev=> prev);
     }
   };
 
-  const getSearchResults = async () => {
+  const getSearchResults = async (page) => {
     const data = await fetch(
       "https://api.themoviedb.org/3/" +
         storeData?.type +
@@ -56,7 +52,6 @@ const TagsResultsPage = () => {
       options
     );
     const Json = await data?.json();
-    // setSearchResults([...Json?.results,newItems]);
     if (page > 1) {
       setSearchResults((prevResult) => [...prevResult, ...Json?.results]);
       console.log("1");
