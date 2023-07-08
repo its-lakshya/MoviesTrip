@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { searchDetails } from "../Utils/detailsSlice";
 import { BsFillStarFill } from "react-icons/bs";
 
-const SearchResultsCard = ({ data, type }) => {
+const SearchResultsCard = ({ data, type, pageData }) => {
   const dataType = useSelector((store) => store?.tagSearch?.data);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -18,7 +18,10 @@ const SearchResultsCard = ({ data, type }) => {
   };
 
   useEffect(() => {
-    goToTop();
+    if(pageData===1){
+      goToTop()
+
+    }
   }, [dataType]);
 
   const goToTop = () => {

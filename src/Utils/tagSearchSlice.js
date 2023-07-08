@@ -7,6 +7,7 @@ const tagSearchSlice = createSlice({
   name: "tagSearch",
   initialState: {
     data: getLocalStorageData,
+    pageData:1
   },
   reducers: {
     tagSearch: (state, action) => {
