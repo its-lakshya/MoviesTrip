@@ -4,23 +4,59 @@ import { useSelector } from "react-redux";
 import { options } from "../Constants";
 
 const SearchResultsPage = ({ data }) => {
-  const [searchResults, setSearchResults] = useState(null);
-  const searchData = useSelector((store) => store?.search?.data)
-  
+  const [searchResults, setSearchResults] = useState([]);
+  const [page, setPage] = useState(1);
+  const searchData = useSelector((store) => store?.search?.data);
+  const pageData = useSelector((store) => store?.tagSearch?.pageData);
+
   useEffect(() => {
-    getSearchDetails();
+    setPage(pageData);
+    getSearchDetails(1);
   }, [searchData]);
 
-  const getSearchDetails = async () => {
+  
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, [searchResults]);
+  
+  useEffect(() => {
+    if (page > 1) {
+      getSearchDetails(page);
+      // console.log('set')
+    }
+  }, [page]);
+
+  const onScroll = () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight;
+    const clientHeight = document.documentElement.clientHeight;
+
+    if (scrollTop + clientHeight >= scrollHeight-400) {
+      setPage((prev) => prev + 1);
+    } else {
+      setPage((prev) => prev);
+    }
+  };
+
+  const getSearchDetails = async (page) => {
     const data = await fetch(
       "https://api.themoviedb.org/3/search/multi?query=" +
         searchData +
-        "&include_adult=false&language=en-US&page=1",
+        "&include_adult=false&language=en-US&page=" +
+        page,
       options
     );
     const Json = await data?.json();
-    setSearchResults(Json?.results);
-    console.log(Json?.results)
+    if (page > 1) {
+      setSearchResults((prevResult) => [...prevResult, ...Json?.results]);
+    } else {
+      setSearchResults([...Json?.results]);
+    }
+    // console.log(Json?.results);
   };
 
   return (
@@ -28,7 +64,9 @@ const SearchResultsPage = ({ data }) => {
       <div className="mx-28 ">
         {searchResults && (
           <div className="animate-topComingSearchResultsPage mt-80 opacity-0">
-              <div className='mt-12 flex justify-center text-sm font-normal'>Showing Results for</div>
+            <div className="mt-12 flex justify-center text-sm font-normal">
+              Showing Results for
+            </div>
             <div className="h-16 bg-gradient-to-b from-red-700  to-black  flex justify-center items-start font-normal text-4xl">
               {data?.title || searchData}
             </div>
@@ -36,11 +74,21 @@ const SearchResultsPage = ({ data }) => {
               {searchResults.map((items) => {
                 if (items?.original_title && items?.media_type === "movie") {
                   return (
-                    <SearchResultsCard key={items?.id} data={items} type='movie'/>
+                    <SearchResultsCard
+                      key={items?.id}
+                      data={items}
+                      type="movie"
+                      pageData={page}
+                    />
                   );
                 } else if (items?.original_name && items?.media_type === "tv") {
                   return (
-                    <SearchResultsCard key={items?.id} data={items} type='tv'/>
+                    <SearchResultsCard
+                      key={items?.id}
+                      data={items}
+                      type="tv"
+                      pageData={page}
+                    />
                   );
                 } else {
                   return null;

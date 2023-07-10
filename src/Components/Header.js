@@ -45,7 +45,6 @@ const Header = () => {
   const searchButtonClickHandler = (data) => {
     dispatch(search(data))
     navigate("/search");
-    console.log('clicked')
   };
 
   return (

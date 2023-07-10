@@ -20,7 +20,6 @@ const SearchResultsCard = ({ data, type, pageData }) => {
   useEffect(() => {
     if(pageData===1){
       goToTop()
-
     }
   }, [dataType]);
 

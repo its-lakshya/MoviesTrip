@@ -91,7 +91,6 @@ const DetailsPage = () => {
     setReommendation(Json);
   };
 
-  // if (details && images && recommendation && reviews)
   return (
     <div className="'bg-black bg-opacity-95 w-full min-h-screen">
       {details && images && recommendation && (
