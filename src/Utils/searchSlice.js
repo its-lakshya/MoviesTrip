@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const getLocalStorageData = localStorage.getItem('localStorageData') !== null ? 
-JSON.parse(localStorage.getItem('localStorageData')) : null
+const getLocalStorageData =
+  localStorage.getItem("localStorageData") !== null
+    ? JSON.parse(localStorage.getItem("localStorageData"))
+    : null;
 
 const searchSlice = createSlice({
   name: "search",
@@ -11,7 +13,7 @@ const searchSlice = createSlice({
   reducers: {
     search: (state, action) => {
       state.data = action.payload;
-      localStorage.setItem('localStorageData', JSON.stringify(state.data))
+      localStorage.setItem("localStorageData", JSON.stringify(state.data));
     },
   },
 });

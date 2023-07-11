@@ -10,9 +10,7 @@ const UpcomingMovies = () => {
   const handleScroll = () => {
     const position = window.scrollY;
     setSrollPosition(position);
-    // console.log(scrollPosition)
   };
-
 
   useEffect(() => {
     getUpcomingMovies();
@@ -22,7 +20,6 @@ const UpcomingMovies = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-
   }, []);
 
   const getUpcomingMovies = async () => {
@@ -37,9 +34,9 @@ const UpcomingMovies = () => {
   if (upcomingMovies)
     return (
       <div className="mx-28 mt-56">
-        <div className='h-1 '></div>
-        {scrollPosition>=148 && (
-          <div className='animate-topComingUpcoming opacity-0'>
+        <div className="h-1 "></div>
+        {scrollPosition >= 148 && (
+          <div className="animate-topComingUpcoming opacity-0">
             <div className="flex justify-center mb-8 text-[2.5rem] font-normal">
               Upcoming Movies
             </div>
@@ -50,7 +47,6 @@ const UpcomingMovies = () => {
             </div>
           </div>
         )}
-
       </div>
     );
 };

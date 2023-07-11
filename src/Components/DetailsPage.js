@@ -5,7 +5,6 @@ import BackdropCard from "./BackdropCard";
 import RecommendationCard from "./RecommendationCard";
 import { BsFillStarFill } from "react-icons/bs";
 
-
 const DetailsPage = () => {
   const detailsData = useSelector((store) => store?.details?.detailsData);
 
@@ -14,7 +13,6 @@ const DetailsPage = () => {
   const handleScroll = () => {
     const position = window.scrollY;
     setSrollPosition(position);
-    // console.log(scrollPosition)
   };
 
   const [details, setDetails] = useState(null);
@@ -25,23 +23,19 @@ const DetailsPage = () => {
     getDetails();
     getImages();
     getRecommendation();
-
   }, [details]);
 
-
-  useEffect(()=> {
+  useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-    
-  },[])
+  }, []);
 
-
-  useEffect(()=> {
-    goToTop()
-  },[detailsData])
+  useEffect(() => {
+    goToTop();
+  }, [detailsData]);
 
   const goToTop = () => {
     window.scrollTo({
@@ -61,7 +55,6 @@ const DetailsPage = () => {
     );
     const Json = await data?.json();
     setDetails(Json);
-    // console.log(Json);
   };
 
   const getImages = async () => {
@@ -75,7 +68,6 @@ const DetailsPage = () => {
     );
     const Json = await data?.json();
     setImages(Json);
-    // console.log(Json);
   };
 
   const getRecommendation = async () => {
@@ -135,9 +127,9 @@ const DetailsPage = () => {
                   <div className="text-xl text-red-700 font-normal">
                     Ratings
                   </div>
-                  <div className='flex gap-x-1'>
-                  {details?.vote_average}
-                  <BsFillStarFill className='mt-1 text-red-700'/>
+                  <div className="flex gap-x-1">
+                    {details?.vote_average}
+                    <BsFillStarFill className="mt-1 text-red-700" />
                   </div>
                 </div>
                 <div className="font-light bg-gradient-to-t  from-red-700 from-10% to-transparent to-80%  w-32 max-h-24 rounded-b-2xl flex flex-col items-center hover:from-10% hover:to-60% cursor-pointer">

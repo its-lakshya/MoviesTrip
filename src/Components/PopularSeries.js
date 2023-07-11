@@ -19,17 +19,15 @@ const PopularSeries = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-
   }, []);
 
   const getTrending = async () => {
     const data = await fetch(
-      'https://api.themoviedb.org/3/tv/popular?language=en-US&page=1',
+      "https://api.themoviedb.org/3/tv/popular?language=en-US&page=1",
       options
     );
     const Json = await data?.json();
     setTrending(Json?.results);
-    // console.log(Json.results);
   };
 
   if (trending)

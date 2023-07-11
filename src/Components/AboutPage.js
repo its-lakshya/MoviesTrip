@@ -2,10 +2,8 @@ import React from "react";
 import image from "../Assets/MoviesTrip_AboutMe_Background.jpg";
 import developerImage from "../Assets//MUN_Photo.jpg";
 
-
-const AboutPage = () => {  
+const AboutPage = () => {
   return (
-    // <div className="">
     <div className="w-full mt-16 bg-black bg-opacity-95 min-h-screen ">
       <div className="w-full h-96" style={{ backgroundImage: `url(${image})` }}>
         <div className="w-full h-96 bg-black bg-opacity-40 flex justify-center items-center text-6xl font-normal">
@@ -27,7 +25,6 @@ const AboutPage = () => {
         </div>
       </div>
     </div>
-    // </div>
   );
 };
 

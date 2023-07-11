@@ -17,7 +17,6 @@ const PopularMovies = () => {
   const detailsHandler = ({ data }) => {
     dispatch(searchDetails(data));
     navigate("/details");
-    // console.log('clicked')
   };
 
   useEffect(() => {
@@ -44,7 +43,10 @@ const PopularMovies = () => {
             className=" w-[40rem] h-[30rem]  cursor-pointer  flex flex-col justify-center transition duration-300 ease-in-out hover:scale-110 hover:shadow-black hover:shadow-lg hover:z-10 "
             onClick={() =>
               detailsHandler({
-                data: { type: "movie", id:popularMovies[popularMoviesNumber]?.id },
+                data: {
+                  type: "movie",
+                  id: popularMovies[popularMoviesNumber]?.id,
+                },
               })
             }
           >
@@ -56,13 +58,13 @@ const PopularMovies = () => {
               <div className="font-thin text-lg">
                 {popularMovies[popularMoviesNumber]?.overview}
               </div>
-              <div className='flex gap-x-2'>
+              <div className="flex gap-x-2">
                 <span className="text-red-700 text-xl font-normal">
                   Ratings{" "}
                 </span>
                 <span className="font-medium flex gap-x-1 mt-[0.20rem] ">
                   {popularMovies[popularMoviesNumber]?.vote_average}
-                  <BsFillStarFill className='mt-[0.35rem]  text-red-700 text-sm'/>
+                  <BsFillStarFill className="mt-[0.35rem]  text-red-700 text-sm" />
                 </span>
               </div>
               <div>
@@ -75,7 +77,7 @@ const PopularMovies = () => {
               </div>
               <div>
                 <span className="text-red-700 text-xl font-normal">
-                  Release{"  "} 
+                  Release{"  "}
                 </span>
                 <span className="font-medium">
                   {popularMovies[popularMoviesNumber]?.release_date}
@@ -91,8 +93,12 @@ const PopularMovies = () => {
             }
             onClick={() =>
               detailsHandler({
-                data: { type: "movie", id:popularMovies[popularMoviesNumber]?.id },
-              })}
+                data: {
+                  type: "movie",
+                  id: popularMovies[popularMoviesNumber]?.id,
+                },
+              })
+            }
           />
         </div>
       )}

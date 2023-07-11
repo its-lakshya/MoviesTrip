@@ -18,7 +18,9 @@ const TopRatedCard = ({ data }) => {
     <div className="animate-horizontalAutoScrollRight-infinite">
       <div
         className="scroll-none cursor-pointer w-48 box-border flex flex-col justify-end  mx-4 snap-start  hover:scale-95 hover:shadow-red-700 hover:shadow-lg"
-        onClick={() => detailsHandler({ data: { type: "movie", id: data?.id } })}
+        onClick={() =>
+          detailsHandler({ data: { type: "movie", id: data?.id } })
+        }
       >
         <img
           className=""
@@ -31,7 +33,7 @@ const TopRatedCard = ({ data }) => {
           </div>
           <div className="text-xs flex gap-x-1">
             {data?.vote_average}
-           <BsFillStarFill className='mt-[0.13rem] text-red-700'/>
+            <BsFillStarFill className="mt-[0.13rem] text-red-700" />
           </div>
         </div>
       </div>

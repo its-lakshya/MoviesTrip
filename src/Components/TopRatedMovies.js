@@ -12,7 +12,6 @@ const TopRatedMovies = () => {
     setSrollPosition(position);
   };
 
-
   useEffect(() => {
     getTopRatedMovies();
 
@@ -21,7 +20,6 @@ const TopRatedMovies = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-
   }, []);
 
   const getTopRatedMovies = async () => {
@@ -36,9 +34,9 @@ const TopRatedMovies = () => {
   if (topRatedMovies)
     return (
       <div className="mx-28 mt-40">
-        <div className='h-1 '></div>
-        {scrollPosition>=700 && (
-          <div className='animate-topComingTopRated opacity-0'>
+        <div className="h-1 "></div>
+        {scrollPosition >= 700 && (
+          <div className="animate-topComingTopRated opacity-0">
             <div className="flex justify-center mb-8 text-[2.5rem] font-normal">
               Top Rated Movies
             </div>
@@ -49,7 +47,6 @@ const TopRatedMovies = () => {
             </div>
           </div>
         )}
-
       </div>
     );
 };

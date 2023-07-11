@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import { IMAGES_BASE_URL } from "../Constants";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -7,9 +7,9 @@ import { BsFillStarFill } from "react-icons/bs";
 
 const SearchResultsCard = ({ data, type, pageData }) => {
   const dataType = useSelector((store) => store?.tagSearch?.data);
+  const searchData = useSelector((store) => store?.search?.data);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  // console.log(type)
 
   const detailsHandler = ({ data }) => {
     dispatch(searchDetails(data));
@@ -18,10 +18,14 @@ const SearchResultsCard = ({ data, type, pageData }) => {
   };
 
   useEffect(() => {
-    if(pageData===1){
-      goToTop()
+    console.log('outside top')
+    // console.log(pageData)
+    if (pageData === 1) {
+      goToTop();
+      console.log('inside top')
     }
-  }, [dataType]);
+  }, [dataType, searchData, pageData]);
+
 
   const goToTop = () => {
     window.scrollTo({

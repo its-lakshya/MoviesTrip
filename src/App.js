@@ -34,9 +34,7 @@ const appRouter = createBrowserRouter([
       {
         path: "tag/search",
         element: <TagsResultsPage />,
-        children: [
-          
-        ],
+        children: [],
       },
       {
         path: "search",
@@ -46,7 +44,6 @@ const appRouter = createBrowserRouter([
         path: "details",
         element: <DetailsPage />,
       },
-      
     ],
   },
 ]);

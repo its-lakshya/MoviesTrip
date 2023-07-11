@@ -7,7 +7,6 @@ import { tagSearch } from "../Utils/tagSearchSlice";
 import { options } from "../Constants";
 import { search } from "../Utils/searchSlice";
 import { searchDetails } from "../Utils/detailsSlice";
-// import SearchResultsPage from "./SearchResultsPage";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -43,7 +42,7 @@ const Header = () => {
   };
 
   const searchButtonClickHandler = (data) => {
-    dispatch(search(data))
+    dispatch(search(data));
     navigate("/search");
   };
 
@@ -156,13 +155,17 @@ const Header = () => {
         </div>
         <div className="flex flex-col  w-72 ">
           <div className="flex justify-between ">
-            <form className="mt-3" onSubmit={(event) => {event.preventDefault()
-               searchButtonClickHandler(searchValue)}}>
+            <form
+              className="mt-3"
+              onSubmit={(event) => {
+                event.preventDefault();
+                searchButtonClickHandler(searchValue);
+              }}
+            >
               <input
                 className="bg-red-700 w-52 bg-opacity-20 font-light px-3 rounded-lg border-b-2 border-red-700 peer focus:outline-none focus:border-red-700 focus:border"
                 value={searchValue}
                 onChange={(e) => {
-                  // console.log(searchValue);
                   return setSearchValue(e.target.value);
                 }}
                 type="text"

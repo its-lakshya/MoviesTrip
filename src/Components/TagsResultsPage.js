@@ -12,6 +12,10 @@ const TagsResultsPage = () => {
   useEffect(() => {
     setPage(pageData);
     getSearchResults(1);
+
+    return ()=> {
+      setPage(1)
+    }
   }, [storeData]);
 
   useEffect(() => {
@@ -33,7 +37,7 @@ const TagsResultsPage = () => {
     const scrollHeight = document.documentElement.scrollHeight;
     const clientHeight = document.documentElement.clientHeight;
 
-    if (scrollTop + clientHeight >= scrollHeight-300) {
+    if (scrollTop + clientHeight >= scrollHeight) {
       setPage((prev) => prev + 1);
     } else {
       setPage((prev) => prev);
@@ -53,10 +57,8 @@ const TagsResultsPage = () => {
     const Json = await data?.json();
     if (page > 1) {
       setSearchResults((prevResult) => [...prevResult, ...Json?.results]);
-      // console.log("1");
     } else {
       setSearchResults([...Json?.results]);
-      // console.log("2");
     }
   };
 

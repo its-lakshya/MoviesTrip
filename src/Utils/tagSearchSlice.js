@@ -1,19 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const getLocalStorageData = localStorage.getItem('localStorageData') !== null ? 
-JSON.parse(localStorage.getItem('localStorageData')) : null
+const getLocalStorageData =
+  localStorage.getItem("localStorageData") !== null
+    ? JSON.parse(localStorage.getItem("localStorageData"))
+    : null;
 
 const tagSearchSlice = createSlice({
   name: "tagSearch",
   initialState: {
     data: getLocalStorageData,
-    pageData:1
+    pageData: 1,
   },
   reducers: {
     tagSearch: (state, action) => {
       state.data = action.payload;
-      localStorage.setItem('localStorageData', JSON.stringify(state.data))
-      },
+      localStorage.setItem("localStorageData", JSON.stringify(state.data));
+    },
   },
 });
 

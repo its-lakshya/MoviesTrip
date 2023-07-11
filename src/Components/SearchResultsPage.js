@@ -14,19 +14,17 @@ const SearchResultsPage = ({ data }) => {
     getSearchDetails(1);
   }, [searchData]);
 
-  
   useEffect(() => {
     window.addEventListener("scroll", onScroll, { passive: true });
-    
+
     return () => {
       window.removeEventListener("scroll", onScroll);
     };
   }, [searchResults]);
-  
+
   useEffect(() => {
     if (page > 1) {
       getSearchDetails(page);
-      // console.log('set')
     }
   }, [page]);
 
@@ -35,7 +33,7 @@ const SearchResultsPage = ({ data }) => {
     const scrollHeight = document.documentElement.scrollHeight;
     const clientHeight = document.documentElement.clientHeight;
 
-    if (scrollTop + clientHeight >= scrollHeight-400) {
+    if (scrollTop + clientHeight >= scrollHeight) {
       setPage((prev) => prev + 1);
     } else {
       setPage((prev) => prev);
@@ -56,7 +54,6 @@ const SearchResultsPage = ({ data }) => {
     } else {
       setSearchResults([...Json?.results]);
     }
-    // console.log(Json?.results);
   };
 
   return (
@@ -75,19 +72,19 @@ const SearchResultsPage = ({ data }) => {
                 if (items?.original_title && items?.media_type === "movie") {
                   return (
                     <SearchResultsCard
-                      key={items?.id}
-                      data={items}
-                      type="movie"
-                      pageData={page}
+                    key={items?.id}
+                    data={items}
+                    pageData={page}
+                    type="movie"
                     />
-                  );
+                    );
                 } else if (items?.original_name && items?.media_type === "tv") {
                   return (
                     <SearchResultsCard
                       key={items?.id}
                       data={items}
-                      type="tv"
                       pageData={page}
+                      type="tv"
                     />
                   );
                 } else {
