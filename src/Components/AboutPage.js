@@ -21,6 +21,17 @@ const AboutPage = () => {
           </div>
           <div className="w-2/3 h-96 flex flex-col items-center shadow-inner shadow-red-700">
             <div className="text-5xl font-light my-4 ">Lakshya Kumar</div>
+            <div className='font-light mx-6 text-lg mt-2 text-justify'>
+              I am a front end web developer with extensive knowledge of HTML,
+              CSS, JavaScript, React, Redux and Tailwind. I have experience in
+              building responsive, user-friendly and accessible websites and web
+              applications using modern technologies and best practices. I am
+              proficient in using various tools and frameworks to enhance the
+              functionality and performance of web projects. I am also skilled
+              in debugging, testing and optimizing code for quality and
+              efficiency. I am passionate about learning new skills and keeping
+              up with the latest trends and innovations in web development.
+            </div>
           </div>
         </div>
       </div>
@@ -29,3 +40,4 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
+
