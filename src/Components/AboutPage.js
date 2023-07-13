@@ -19,9 +19,9 @@ const AboutPage = () => {
               src={developerImage}
             />
           </div>
-          <div className="w-2/3 h-96 flex flex-col items-center shadow-inner shadow-red-700">
+          <div className="w-2/3 min-h-96 flex flex-col items-center shadow-inner shadow-red-700 hover:bg-gradient-to-b hover:from-red-700 hover:to-80% hover:to-black">
             <div className="text-5xl font-light my-4 ">Lakshya Kumar</div>
-            <div className='font-light mx-6 text-lg mt-2 text-justify'>
+            <div className="font-light mx-6 text-lg mt-2 text-justify">
               I am a front end web developer with extensive knowledge of HTML,
               CSS, JavaScript, React, Redux and Tailwind. I have experience in
               building responsive, user-friendly and accessible websites and web
@@ -30,7 +30,22 @@ const AboutPage = () => {
               functionality and performance of web projects. I am also skilled
               in debugging, testing and optimizing code for quality and
               efficiency. I am passionate about learning new skills and keeping
-              up with the latest trends and innovations in web development.
+              up with the latest trends and innovations in web development. 
+              <div className='flex justify-center mt-4 text-5xl font-light'>MoviesTrip</div>
+              <div className='mt-6'>
+              If you are looking for a website that can help you find the best
+              movies to watch, you might want to check out MoviesTrip.
+              MoviesTrip is a website that uses a powerful algorithm to
+              analyze your preferences and ratings, and then recommends movies
+              that match your taste and mood. You can also browse movies by
+              genre, year, rating, or popularity, and watch trailers, read
+              reviews, and see ratings from other users. MoviesTrip is made
+              with React, a popular JavaScript library for building user
+              interfaces. React makes the website fast, responsive, and easy to
+              use. Whether you are in the mood for a comedy, a thriller, or a
+              romance, MoviesTrip can help you find the perfect movie for any
+              occasion.
+              </div>
             </div>
           </div>
         </div>
@@ -40,4 +55,3 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
-
