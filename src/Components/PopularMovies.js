@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
 import { options, IMAGES_BASE_URL } from "../Constants";
 import { useDispatch } from "react-redux";
 import { searchDetails } from "../Utils/detailsSlice";
 import { useNavigate } from "react-router-dom";
 import { BsFillStarFill } from "react-icons/bs";
 
+
 const PopularMovies = () => {
   const [popularMovies, setPopularMovies] = useState(null);
   let [popularMoviesNumber, setPopularMoviesNumber] = useState(11);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   useEffect(() => {
     getPopularMovies();
   }, []);
@@ -22,9 +24,10 @@ const PopularMovies = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setPopularMoviesNumber(Math.floor(Math.random() * 20));
-    }, 5000);
+    }, 1000);
 
-    return () => clearTimeout(timer);
+    return () => {clearTimeout(timer)
+    };
   }, [popularMoviesNumber]);
 
   const getPopularMovies = async () => {
@@ -37,10 +40,11 @@ const PopularMovies = () => {
   };
   return (
     <div className="w-full h-screen bg-gradient-to-r from-black to-red-700">
+      <div className={"h-screen mx-28 flex flex-row justify-center items-center"}>
       {popularMovies && (
-        <div className="h-screen mx-28 flex flex-row  justify-center items-center opacity-0 animate-popularMovies">
+        <>
           <div
-            className=" w-[40rem] h-[30rem]  cursor-pointer  flex flex-col justify-center transition duration-300 ease-in-out hover:scale-110 hover:shadow-black hover:shadow-lg hover:z-10 "
+            className=" w-[40rem] min-h-[30rem]  cursor-pointer  flex flex-col justify-center transition duration-300 ease-in-out hover:scale-110 hover:shadow-black hover:shadow-lg hover:z-10 "
             onClick={() =>
               detailsHandler({
                 data: {
@@ -51,11 +55,11 @@ const PopularMovies = () => {
             }
           >
             <div className="flex flex-col mt-10 gap-6">
-              <h1 className="font-bold font-sans  text-7xl">
+              <h1 className="font-bold font-sans  text-7xl max-h-56 overflow-hidden">
                 {popularMovies[popularMoviesNumber]?.title}
               </h1>
 
-              <div className="font-thin text-lg">
+              <div className="font-thin text-lg max-h-40 overflow-hidden">
                 {popularMovies[popularMoviesNumber]?.overview}
               </div>
               <div className="flex gap-x-2">
@@ -98,10 +102,12 @@ const PopularMovies = () => {
                   id: popularMovies[popularMoviesNumber]?.id,
                 },
               })
+              
             }
           />
-        </div>
-      )}
+          </>
+          )}
+          </div>
     </div>
   );
 };

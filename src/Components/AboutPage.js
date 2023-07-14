@@ -1,6 +1,6 @@
 import React from "react";
 import image from "../Assets/MoviesTrip_AboutMe_Background.jpg";
-import developerImage from "../Assets//MUN_Photo.jpg";
+import developerImage from "../Assets//Orientation_Program_Photo.jpg";
 
 const AboutPage = () => {
   return (
@@ -14,7 +14,7 @@ const AboutPage = () => {
         <div className="flex justify-between w-full items-center ">
           <div className="h-[36rem]   shadow-lg shadow-black bg-gradient-to-b from-red-700 to-black">
             <img
-              className="w-60 h-[18rem] hover:translate-y-72 hover:ease-in-out hover:delay-300 hover:transition-all"
+              className="w-60 h-[18rem]  border-red-700 object-contain hover:translate-y-72 hover:ease-in-out hover:delay-300 hover:transition-all"
               alt="developerImage"
               src={developerImage}
             />
