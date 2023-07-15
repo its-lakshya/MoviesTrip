@@ -11,7 +11,7 @@ import SearchResultsPage from "./Components/SearchResultsPage";
 
 const AppLayout = () => {
   return (
-    <div>
+    <div className='bg-black opacity-90 w-full'>
       <Header />
       <Outlet />
     </div>

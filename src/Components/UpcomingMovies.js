@@ -45,7 +45,6 @@ const UpcomingMovies = () => {
                 <UpcomingCard key={items?.id} data={items} />
               ))}
             </div>
-            <button>next</button>
           </div>
         )}
       </div>

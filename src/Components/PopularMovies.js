@@ -24,7 +24,7 @@ const PopularMovies = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setPopularMoviesNumber(Math.floor(Math.random() * 20));
-    }, 1000);
+    }, 3000);
 
     return () => {clearTimeout(timer)
     };
@@ -39,12 +39,12 @@ const PopularMovies = () => {
     setPopularMovies(Json?.results);
   };
   return (
-    <div className="w-full h-screen bg-gradient-to-r from-black to-red-700">
+    <div className="min-w-screen h-screen bg-gradient-to-r from-black to-red-700">
       <div className={"h-screen mx-28 flex flex-row justify-center items-center"}>
       {popularMovies && (
-        <>
+        <div className='flex w-full  h-screen justify-evenly items-center overflow-hidden z-0'>
           <div
-            className=" w-[40rem] min-h-[30rem]  cursor-pointer  flex flex-col justify-center transition duration-300 ease-in-out hover:scale-110 hover:shadow-black hover:shadow-lg hover:z-10 "
+            className="max-w-[40rem] min-h-[30rem] flex-shrink  cursor-pointer  flex flex-col justify-center transition duration-300 ease-in-out hover:scale-110 hover:shadow-black hover:shadow-lg hover:z-10 "
             onClick={() =>
               detailsHandler({
                 data: {
@@ -89,8 +89,9 @@ const PopularMovies = () => {
               </div>
             </div>
           </div>
+          <div className='w-96'>
           <img
-            className="cursor-pointer ml-56 h-3/4 border border-transparent p-3  bg-gradient-to-l from-black to-red-700 shadow-xl transition duration-300 ease-in-out hover:scale-110 hover:shadow-black hover:shadow-lg hover:z-10"
+            className="cursor-pointer h-3/4 border border-transparent p-3  bg-gradient-to-l from-black to-red-700 shadow-xl transition duration-300 ease-in-out hover:scale-110 hover:shadow-black hover:shadow-lg "
             alt="BackgroundImage"
             src={
               IMAGES_BASE_URL + popularMovies[popularMoviesNumber]?.poster_path
@@ -105,7 +106,8 @@ const PopularMovies = () => {
               
             }
           />
-          </>
+          </div>
+          </div>
           )}
           </div>
     </div>

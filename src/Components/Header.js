@@ -47,10 +47,10 @@ const Header = () => {
   };
 
   return (
-    <div className="fixed top-0 bg-opacity-95 bg-black h-16 w-full z-10 flex flex-col">
-      <div className="flex justify-between mx-28 pt-2">
-        <div className="flex items-center cursor-pointer">logo</div>
-        <div className="flex justify-evenly w-96 [&>*]:flex [&>*]:[&>*]:mt-1.5 ml-64 items-center  [&>span]:cursor-pointer font-light text-lg">
+    <div className="fixed top-0 bg-opacity-95 bg-black h-16 w-full z-10 flex flex-col max-lg:flex-shrink">
+      <div className="flex justify-between mx-28 pt-2 ">
+        <Link to="/" className="flex text-red-700 items-center cursor-pointer font-semibold text-2xl mt-1.5 ">MoviesTrip</Link>
+        <div className="flex justify-evenly w-96 [&>*]:flex [&>*]:[&>*]:mt-1.5  items-center  [&>span]:cursor-pointer font-light text-lg">
           <Link to="/" className="hover:text-red-600 hover:font-normal">
             Home
           </Link>
@@ -163,7 +163,7 @@ const Header = () => {
               }}
             >
               <input
-                className="bg-red-700 w-52 bg-opacity-20 font-light px-3 rounded-lg border-b-2 border-red-700 peer focus:outline-none focus:border-red-700 focus:border"
+                className="max-md:hidden   bg-red-700 w-52 bg-opacity-20 font-light px-3 rounded-lg border-b-2 border-red-700 peer focus:outline-none focus:border-red-700 focus:border"
                 value={searchValue}
                 onChange={(e) => {
                   return setSearchValue(e.target.value);
@@ -221,7 +221,7 @@ const Header = () => {
             </form>
             <div className="flex justify-evenly items-center text-xl [&>*]:cursor-pointer ">
               <BiSearch
-                className="hover:text-red-800 text-2xl "
+                className="hover:text-red-800 text-2xl  "
                 onClick={() => searchButtonClickHandler(searchValue)}
               />
               <div className="bg-black w-12 h-12 rounded-3xl flex justify-center items-center hover:text-red-800 text-2xl">

@@ -25,7 +25,7 @@ const UpcomingCard = ({ data }) => {
         }
       >
         <img
-          className=""
+          className="object-cover w-full h-66"
           alt="bgImg"
           src={IMAGES_BASE_URL + data?.poster_path}
         />

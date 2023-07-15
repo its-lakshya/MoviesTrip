@@ -14,7 +14,7 @@ const AboutPage = () => {
         <div className="flex justify-between w-full items-center ">
           <div className="h-[36rem]   shadow-lg shadow-black bg-gradient-to-b from-red-700 to-black">
             <img
-              className="w-60 h-[18rem]  border-red-700 object-contain hover:translate-y-72 hover:ease-in-out hover:delay-300 hover:transition-all"
+              className="w-60 h-[18rem] border  border-red-700 object-cover hover:translate-y-72 hover:ease-in-out hover:delay-300 hover:transition-all"
               alt="developerImage"
               src={developerImage}
             />

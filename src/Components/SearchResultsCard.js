@@ -19,10 +19,8 @@ const SearchResultsCard = ({ data, type, pageData }) => {
 
   useEffect(() => {
     console.log('outside top')
-    // console.log(pageData)
     if (pageData === 1) {
       goToTop();
-      console.log('inside top')
     }
   }, [dataType, searchData, pageData]);
 
@@ -45,7 +43,7 @@ const SearchResultsCard = ({ data, type, pageData }) => {
         }
       >
         <img
-          className=""
+          className="object-cover w-full h-[22.5rem]"
           alt="bgImg"
           src={IMAGES_BASE_URL + data?.poster_path}
         />
