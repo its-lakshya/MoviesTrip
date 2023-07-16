@@ -17,7 +17,7 @@ const UpcomingCard = ({ data }) => {
   return (
     <div className="animate-horizontalAutoScrollRight-infinite">
       <div
-        className="scroll-none  cursor-pointer w-48 box-border flex flex-col justify-end  mx-4 snap-start  hover:scale-95 hover:shadow-red-700 hover:shadow-lg"
+        className="scroll-none  cursor-pointer w-48 max-md:w-40 max-lg:w-44 max-sm:w-32 box-border flex flex-col justify-end  mx-4 snap-start  hover:scale-95 hover:shadow-red-700 hover:shadow-lg"
         onClick={() =>
           detailsHandler({
             data: { type: "movie", id: data?.id },

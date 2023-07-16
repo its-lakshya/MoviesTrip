@@ -33,11 +33,11 @@ const UpcomingMovies = () => {
 
   if (upcomingMovies)
     return (
-      <div className="mx-28 mt-56">
+      <div className="mx-28 mt-56 max-md:mx-12 max-lg:mx-16 max-sm:mx-4">
         <div className="h-1 "></div>
         {scrollPosition >= 148 && (
           <div className="animate-topComingUpcoming opacity-0">
-            <div className="flex justify-center mb-8 text-[2.5rem] font-normal">
+            <div className="flex justify-center mb-8 text-[2.5rem] font-normal max-lg:text-[2.2rem] max-md:text-[2rem] max-sm:text-[1.4rem] max-lg:mb-6">
               Upcoming Movies
             </div>
             <div className="flex overflow-x-auto overflow-y-clip scrollbar-hide justify-start snap-x scroll-smooth box-border  ">
