@@ -34,7 +34,7 @@ const UpcomingCard = ({ data }) => {
             {data?.title}
           </div>
           <div className="text-xs flex gap-x-1">
-            {data?.vote_average}
+            {Math.round(data?.vote_average*10)/10}
             <BsFillStarFill className="mt-[0.13rem]  text-red-700" />
           </div>
         </div>

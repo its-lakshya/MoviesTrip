@@ -128,7 +128,7 @@ const DetailsPage = () => {
                     Ratings
                   </div>
                   <div className="flex gap-x-1">
-                    {details?.vote_average}
+                    {Math.round(details?.vote_average*10)/10}
                     <BsFillStarFill className="mt-1 text-red-700" />
                   </div>
                 </div>
@@ -138,8 +138,8 @@ const DetailsPage = () => {
                   </div>
                   {details?.runtime || "NA"} minutes
                 </div>
-                <div className="font-light bg-gradient-to-t overflow-hidden from-red-700 from-10% to-transparent to-80%   w-32 max-h-24 rounded-b-2xl flex flex-col items-center hover:from-10% hover:to-60% cursor-pointer">
-                  <div className="text-xl text-red-700 font-normal h-36">
+                <div className="font-light bg-gradient-to-t overflow-hidden from-red-700 from-10% to-transparent to-80% w-32 max-h-24 rounded-b-2xl flex flex-col items-center hover:from-10% hover:to-60% cursor-pointer">
+                  <div className="text-xl text-red-700 font-normal">
                     Genres
                   </div>
                   {details?.genres.map((items) => (

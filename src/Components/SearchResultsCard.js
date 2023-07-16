@@ -63,7 +63,7 @@ const SearchResultsCard = ({ data, type, pageData }) => {
             </>
           )}
           <div className="text-sm flex gap-x-1">
-            {data?.vote_average}
+            {Math.round(data?.vote_average*10)/10}
             <BsFillStarFill className="mt-[0.18rem] text-red-700" />
           </div>
         </div>

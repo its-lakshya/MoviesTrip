@@ -57,7 +57,7 @@ const PopularMovies = () => {
             }
           >
             <div className="flex flex-col gap-6 max-xl:gap-4 max-lg:gap-3 max-md:gap-1 max-sm:gap-0 max-sm:flex-shrink max-sm:max-w-96 max-sm:flex-wrap max-sm:items-center">
-              <h1 className=" h-[9.5rem] font-bold font-sans border text-7xl max-xl:text-6xl max-xl:h-[8rem] max-lg:text-5xl max-lg:h-[6.4rem] max-md:text-4xl max-md:h-[5.3rem] max-sm:text-base max-sm:h-[2rem] max-sm:flex max-sm:w-60 max-sm:justify-center  max-sm:shrink overflow-hidden">
+              <h1 className=" h-[9.5rem] font-bold font-sans text-7xl max-xl:text-6xl max-xl:h-[8rem] max-lg:text-5xl max-lg:h-[6.4rem] max-md:text-4xl max-md:h-[5.3rem] max-sm:text-base max-sm:h-[1.8rem] max-sm:underline max-sm:flex max-sm:w-60 max-sm:justify-center  max-sm:shrink overflow-hidden">
                 {popularMovies[popularMoviesNumber]?.title}
               </h1>
 
@@ -70,7 +70,7 @@ const PopularMovies = () => {
                   Ratings{" "}
                 </span>
                 <span className="font-medium flex gap-x-1 mt-[0.20rem] max-lg:text-[0.9rem] max-lg:mt-[0.3rem] max-md:text-[0.87rem] max-sm:text-[0.7rem] max-sm:mt-[0.45rem]">
-                  {popularMovies[popularMoviesNumber]?.vote_average}
+                  {Math.round(popularMovies[popularMoviesNumber]?.vote_average*10)/10}
                   <BsFillStarFill className="mt-[0.35rem]  text-red-700 text-sm max-lg:text-[0.9rem] max-lg:mt-[0.18rem] max-sm:text-[0.7rem]" />
                 </span>
               </div>
