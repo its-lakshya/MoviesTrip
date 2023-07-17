@@ -33,7 +33,7 @@ const TopRatedMovies = () => {
 
   if (topRatedMovies)
     return (
-    <div className="mx-28 mt-40 max-md:mx-12 max-lg:mx-16 max-sm:mx-4">
+    <div className="mx-28 mt-40 max-xl:mx-20 max-lg:mx-16 max-md:mx-12  max-sm:mx-4">
         <div className="h-1 "></div>
         {scrollPosition >= 700 && (
           <div className="animate-topComingTopRated opacity-0">

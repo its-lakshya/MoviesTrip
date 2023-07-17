@@ -13,7 +13,7 @@ const AboutPage = () => {
           About
         </div>
       </div>
-      <div className="flex flex-col justify-between mt-80 max-lg:mt-72 max-md:mt-64 mx-28 max-md:mx-12 max-lg:mx-16 max-sm:mx-4  items-center animate-topComingAbout opacity-0 ">
+      <div className="flex flex-col justify-between mt-80 max-lg:mt-72 max-md:mt-64 mx-28 max-xl:mx-20 max-lg:mx-16 max-md:mx-12  max-sm:mx-4  items-center animate-topComingAbout opacity-0 ">
         <div className="flex justify-between w-full items-start max-lg:gap-4 max-xl:gap-6 max-md:gap-4 max-sm:justify-center ">
           <div className="h-[36rem] max-sm:hidden shadow-lg shadow-black bg-gradient-to-b from-red-700 to-black">
             <img

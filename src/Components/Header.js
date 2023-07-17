@@ -48,7 +48,7 @@ const Header = () => {
 
   return (
     <div className="fixed top-0 bg-opacity-95 bg-black h-16 w-full z-10 flex flex-col max-lg:flex-shrink">
-      <div className="flex justify-between mx-28 pt-2  max-md:mx-12 max-lg:mx-16 max-sm:mx-4 ">
+      <div className="flex justify-between mx-28 pt-2 max-xl:mx-20 max-lg:mx-16 max-md:mx-12  max-sm:mx-4 ">
         <Link to="/" className="flex text-red-700 items-center cursor-pointer font-semibold text-2xl max-sm:text-xl mt-[0.5rem] max-sm:mt-[0.6rem] ">MoviesTrip</Link>
         <div className="flex justify-evenly w-96 [&>*]:flex [&>*]:[&>*]:mt-1.5 mt-3 max-sm:mt-[0.6rem] items-center  [&>span]:cursor-pointer font-light text-lg max-sm:text-base">
           <Link to="/" className="hover:text-red-600 hover:font-normal">

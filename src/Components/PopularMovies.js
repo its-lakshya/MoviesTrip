@@ -40,7 +40,7 @@ const PopularMovies = () => {
   };
   return (
     <div className="min-w-screen h-screen bg-gradient-to-r from-black to-red-700">
-      <div className={"h-screen mx-28 flex flex-row shrink justify-center items-center max-md:mx-12 max-lg:mx-16 max-sm:mx-4"}>
+      <div className={"h-screen mx-28 flex flex-row shrink justify-center items-center max-xl:mx-20 max-lg:mx-16 max-md:mx-12  max-sm:mx-4"}>
       {popularMovies && (
         <div className='flex w-full shrink gap-x-16 max-md:gap-10 max-sm:gap-4 max-sm:flex-col-reverse max-sm:align-middle justify-evenly items-center overflow-hidden z-0'>
           <div
