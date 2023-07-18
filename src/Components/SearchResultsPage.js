@@ -67,7 +67,7 @@ const SearchResultsPage = ({ data }) => {
             <div className="capitalize h-16 max-xl:h-14 max-lg:h-12 max-md:h-10 max-sm:h-6 bg-gradient-to-b from-red-700  to-black  flex justify-center items-center font-normal text-4xl max-lg:text-3xl max-md:text-2xl max-sm:text-xl">
               {data?.title || searchData}
             </div>
-            <div className="w-full border flex flex-wrap justify-center  snap-x gap-y-12 max-xl:gap-y-10 max-lg:gap-y-8 max-md:gap-y-6 max-sm:gap-y-4 scroll-smooth box-border mt-24 max-xl:mt-20 max-lg:mt-16 max-md:mt-12 max-sm:mt-6">
+            <div className="w-full flex flex-wrap justify-center  snap-x gap-y-12 max-xl:gap-y-10 max-lg:gap-y-8 max-md:gap-y-6 max-sm:gap-y-4 scroll-smooth box-border mt-24 max-xl:mt-20 max-lg:mt-16 max-md:mt-12 max-sm:mt-6">
               {searchResults.map((items) => {
                 if (items?.original_title && items?.media_type === "movie") {
                   return (

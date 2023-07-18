@@ -14,11 +14,9 @@ const SearchResultsCard = ({ data, type, pageData }) => {
   const detailsHandler = ({ data }) => {
     dispatch(searchDetails(data));
     navigate("/details");
-    console.log(data);
   };
 
   useEffect(() => {
-    console.log('outside top')
     if (pageData === 1) {
       goToTop();
     }

@@ -86,18 +86,20 @@ const DetailsPage = () => {
   return (
     <div className="'bg-black bg-opacity-95 w-full min-h-screen">
       {details && images && recommendation && (
-        <div className="mx-28  flex flex-col">
-          <div className="w-full mt-16 h-[46rem] overflow-hidden flex flex-row justify-between items-center ">
+        <div className="mx-28 max-xl:mx-20 max-lg:mx-16 max-md:mx-12 max-sm:mx-4 flex flex-col">
+          <div className="w-full mt-16 h-[46rem] overflow-hidden flex flex-row justify-between items-center max-xl: ">
             {details?.original_title && (
               <div className="text-7xl w-1/4 font-normal hover:bg-gradient-to-r hover:form-10% hover:to-70% hover:from-red-700 hover:to-transparent ">
                 {details?.title}
               </div>
             )}
             {details?.original_name && (
-              <div className="text-7xl w-1/4 font-normal">{details?.name}</div>
+              <div className="text-7xl w-1/4 font-normal hover:bg-gradient-to-r hover:form-10% hover:to-70% hover:from-red-700 hover:to-transparent ">
+                {details?.name}
+                </div>
             )}
             <img
-              className="h-full hover:shadow-xl hover:shadow-red-700"
+              className="h-full w-[30.6rem] hover:shadow-xl hover:shadow-red-700"
               alt="bgImg"
               src={IMAGES_BASE_URL + images?.posters[0]?.file_path}
             />
