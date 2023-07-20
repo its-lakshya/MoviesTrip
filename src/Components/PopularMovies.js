@@ -24,7 +24,7 @@ const PopularMovies = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setPopularMoviesNumber(Math.floor(Math.random() * 20));
-    }, 1000);
+    }, 5000);
 
     return () => {clearTimeout(timer)
     };
