@@ -1,7 +1,6 @@
 {
   "name": "movies-trip",
   "version": "0.1.0",
-  "homepage": "https://its-lakshya.github.io/MoviesTrip/index.html",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
